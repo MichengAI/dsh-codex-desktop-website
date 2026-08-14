@@ -7,20 +7,32 @@ const downloads = [
   {
     platform: "Windows x64",
     requirement: "Windows 10 及以上（64 位）",
-    href: `${releasesUrl}/download/v0.1.3/DeepSeek.Harness.Desktop-0.1.3-win-x64.exe`,
+    href: `${releasesUrl}/download/v0.1.4/DeepSeek.Harness.Desktop-0.1.4-win-x64.exe`,
     label: "下载 Windows x64",
   },
   {
     platform: "macOS Apple Silicon",
     requirement: "适用于 Apple 芯片 Mac",
-    href: `${releasesUrl}/download/v0.1.3/DeepSeek.Harness.Desktop-0.1.3-mac-arm64.dmg`,
+    href: `${releasesUrl}/download/v0.1.4/DeepSeek.Harness.Desktop-0.1.4-mac-arm64.dmg`,
     label: "下载 macOS Apple Silicon",
   },
   {
     platform: "macOS Intel",
     requirement: "适用于 Intel 芯片 Mac",
-    href: `${releasesUrl}/download/v0.1.3/DeepSeek.Harness.Desktop-0.1.3-mac-x64.dmg`,
+    href: `${releasesUrl}/download/v0.1.4/DeepSeek.Harness.Desktop-0.1.4-mac-x64.dmg`,
     label: "下载 macOS Intel",
+  },
+  {
+    platform: "Linux x64 (.deb)",
+    requirement: "Debian、Ubuntu 等发行版",
+    href: `${releasesUrl}/download/v0.1.4/DeepSeek.Harness.Desktop-0.1.4-linux-amd64.deb`,
+    label: "下载 Linux .deb",
+  },
+  {
+    platform: "Linux x64 (AppImage)",
+    requirement: "支持 AppImage 的 Linux 发行版",
+    href: `${releasesUrl}/download/v0.1.4/DeepSeek.Harness.Desktop-0.1.4-linux-x86_64.AppImage`,
+    label: "下载 Linux AppImage",
   },
 ];
 
@@ -55,10 +67,10 @@ export function App() {
               支持 Windows 和 macOS，打开应用后可直接进入工作区。
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href={downloads[0].href}>获取 v0.1.3</a>
+              <a className="button button-primary" href={downloads[0].href}>获取 v0.1.4</a>
               <a className="button button-secondary" href={repositoryUrl} target="_blank" rel="noreferrer">查看源码</a>
             </div>
-            <div className="release-note"><span>当前版本：v0.1.3</span><span>最后更新：2024-06-01</span></div>
+            <div className="release-note"><span>当前版本：v0.1.4</span><span>最后更新：2026-08-14</span></div>
           </div>
           <aside className="hero-notes" aria-label="产品关键说明">
             <p>DeepSeek Harness Desktop</p>
@@ -86,12 +98,12 @@ export function App() {
           <article><span>01</span><h3>直接启动</h3><p>安装后双击打开，不需要先在终端配置环境。</p></article>
           <article><span>02</span><h3>本机服务</h3><p>默认使用 127.0.0.1，不开放外部访问端口。</p></article>
           <article><span>03</span><h3>继续使用</h3><p>工作区、会话、模型和插件可以保留在本地。</p></article>
-          <article><span>04</span><h3>安装包</h3><p>提供 Windows x64、Apple 芯片和 Intel Mac 版本。</p></article>
+          <article><span>04</span><h3>安装包</h3><p>提供 Windows、macOS 和 Linux 安装包。</p></article>
         </section>
 
         <section className="downloads page-width" id="downloads" aria-labelledby="downloads-title">
           <div className="section-heading">
-            <h2 id="downloads-title">下载 DeepSeek Harness Desktop v0.1.3</h2>
+            <h2 id="downloads-title">下载 DeepSeek Harness Desktop v0.1.4</h2>
           </div>
           <div className="download-table-wrap">
             <table>
