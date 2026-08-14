@@ -25,9 +25,9 @@ const downloads = [
 ];
 
 const resourceLinks = [
-  { label: "GitHub Releases", description: "查看所有版本与发布说明", href: releasesUrl },
-  { label: "Issues", description: "反馈问题或提出建议", href: issuesUrl },
-  { label: "上游 DeepSeek Harness", description: "了解更多项目详情", href: upstreamUrl },
+  { label: "GitHub Releases", description: "版本与发布说明", href: releasesUrl },
+  { label: "Issues", description: "提交问题", href: issuesUrl },
+  { label: "上游 DeepSeek Harness", description: "查看项目源码", href: upstreamUrl },
 ];
 
 export function App() {
@@ -51,8 +51,8 @@ export function App() {
           <div className="hero-copy">
             <h1 id="hero-title">无需命令行，<br />Harness 直接开。</h1>
             <p className="hero-summary">
-              DeepSeek Harness Desktop 是社区维护的 Windows 与 macOS 原生桌面启动器。
-              无需命令行，直接打开完整的 DeepSeek Harness Agent 工作流。
+              DeepSeek Harness Desktop 是 DeepSeek Harness 的桌面启动器。
+              支持 Windows 和 macOS，打开应用后可直接进入工作区。
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href={downloads[0].href}>获取 v0.1.3</a>
@@ -62,11 +62,11 @@ export function App() {
           </div>
           <aside className="hero-notes" aria-label="产品关键说明">
             <p>DeepSeek Harness Desktop</p>
-            <p>社区维护的桌面入口</p>
-            <p>原生支持 Windows 与 macOS</p>
-            <p>本地优先</p>
-            <p>打开完整 Agent 工作流</p>
-            <p>无需命令行</p>
+            <p>社区维护</p>
+            <p>Windows / macOS</p>
+            <p>默认使用本机地址</p>
+            <p>工作区和会话保存在本地</p>
+            <p>内置 Node.js 运行时</p>
           </aside>
         </section>
 
@@ -75,18 +75,18 @@ export function App() {
             <img src="/assets/product-preview.png" alt="DeepSeek Harness Desktop 的工作区与代码审查会话预览" />
           </div>
           <div className="product-notes">
-            <p><strong>本地端口</strong><span>所需服务默认在本机 127.0.0.1 启动。</span></p>
-            <p><strong>内置运行时</strong><span>内置 Node.js 运行时，自动配置依赖。</span></p>
-            <p id="security"><strong>会话与设置延续</strong><span>工作区、会话、模型与插件保持连贯。</span></p>
+            <p><strong>服务地址</strong><span>默认使用本机 127.0.0.1。</span></p>
+            <p><strong>运行环境</strong><span>应用内置 Node.js 与所需依赖。</span></p>
+            <p id="security"><strong>本地数据</strong><span>工作区、会话和设置保存在本机。</span></p>
           </div>
         </section>
 
         <section className="features page-width" id="features" aria-labelledby="features-title">
           <h2 id="features-title" className="visually-hidden">核心能力</h2>
-          <article><span>01</span><h3>打开即用</h3><p>双击启动，无需配置环境。内置 Node.js 与常用运行条件。</p></article>
-          <article><span>02</span><h3>本地优先</h3><p>默认本地 127.0.0.1 运行，边界清晰可控。</p></article>
-          <article><span>03</span><h3>完整工作流</h3><p>延续 Harness 的工作区、会话、模型与插件能力。</p></article>
-          <article><span>04</span><h3>跨平台原生</h3><p>支持 Windows 与 macOS 原生体验，自动更新与无缝升级。</p></article>
+          <article><span>01</span><h3>直接启动</h3><p>安装后双击打开，不需要先在终端配置环境。</p></article>
+          <article><span>02</span><h3>本机服务</h3><p>默认使用 127.0.0.1，不开放外部访问端口。</p></article>
+          <article><span>03</span><h3>继续使用</h3><p>工作区、会话、模型和插件可以保留在本地。</p></article>
+          <article><span>04</span><h3>安装包</h3><p>提供 Windows x64、Apple 芯片和 Intel Mac 版本。</p></article>
         </section>
 
         <section className="downloads page-width" id="downloads" aria-labelledby="downloads-title">
@@ -107,7 +107,7 @@ export function App() {
               </tbody>
             </table>
           </div>
-          <p className="download-help">首次启动将自动下载并安装必要的运行时与依赖组件。</p>
+          <p className="download-help">首次启动时会安装所需的运行时和依赖。</p>
           <div className="resource-links" aria-label="项目资源">
             {resourceLinks.map((link) => (
               <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
@@ -119,7 +119,7 @@ export function App() {
       </main>
 
       <footer className="site-footer page-width">
-        <p>社区维护，非 DeepSeek AI 官方产品。</p>
+        <p>社区维护的非官方项目。</p>
         <a href={repositoryUrl} target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </div>
