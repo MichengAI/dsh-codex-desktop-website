@@ -12,3 +12,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 - 用户已选择“白昼工程笔记”方向：浅色工程网格、编辑式大标题、蓝色注释、产品截图、四项能力和三平台下载表格。
 - 官网必须使用 `MichengAI/deepseek-harness-desktop` 的真实版本与资源链接，不复用参考站链接或文案。
+- Git 提交信息必须使用英文。
