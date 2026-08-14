@@ -49,7 +49,7 @@ export function App() {
       <main id="top">
         <section className="hero page-width" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <h1 id="hero-title">无需命令行，<br />Harness 直接开。</h1>
+            <h1 id="hero-title">DeepSeek Harness<br />桌面启动器</h1>
             <p className="hero-summary">
               DeepSeek Harness Desktop 是 DeepSeek Harness 的桌面启动器。
               支持 Windows 和 macOS，打开应用后可直接进入工作区。
