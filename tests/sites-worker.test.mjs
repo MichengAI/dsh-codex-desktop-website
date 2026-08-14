@@ -1,7 +1,16 @@
 import assert from "node:assert/strict";
 import { access } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 import worker from "../worker/index.js";
+
+test("declares the Cloudflare static-assets directory", async () => {
+  const config = JSON.parse(await readFile(new URL("../wrangler.jsonc", import.meta.url), "utf8"));
+
+  assert.equal(config.main, "worker/index.js");
+  assert.equal(config.assets.directory, "dist/client");
+  assert.equal(config.assets.binding, "ASSETS");
+});
 
 test("serves existing static assets without a fallback", async () => {
   const calls = [];
