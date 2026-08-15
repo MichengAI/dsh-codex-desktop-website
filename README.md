@@ -35,7 +35,7 @@ npm run build
 npm run test:sites
 ```
 
-构建产物位于 `dist\client`。构建脚本同时会生成 Sites 所需的 Worker 与托管配置文件。
+构建产物位于 `dist\client`。
 
 ## Cloudflare Workers 部署
 

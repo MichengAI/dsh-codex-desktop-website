@@ -35,7 +35,7 @@ npm run build
 npm run test:sites
 ```
 
-The client build is written to `dist\client`. The build script also prepares the Worker and hosting files required by Sites.
+The client build is written to `dist\client`.
 
 ## Cloudflare Workers deployment
 
