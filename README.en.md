@@ -48,6 +48,10 @@ npm run build
 npx wrangler deploy
 ```
 
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
+
 ## Project layout
 
 ```text

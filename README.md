@@ -48,6 +48,10 @@ npm run build
 npx wrangler deploy
 ```
 
+## 许可证
+
+本项目采用 [Apache License 2.0](LICENSE)。
+
 ## 目录说明
 
 ```text
