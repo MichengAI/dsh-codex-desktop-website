@@ -8,6 +8,31 @@ body, .site-shell { background: #f8fafc; color: #111827; }
 .brand img { border-radius: 6px; }
 nav { color: #4b5563; font-weight: 600; }
 nav a:hover { color: #2563eb; }
+
+.header-actions { display: flex; align-items: center; gap: 20px; }
+.site-controls { display: flex; gap: 6px; padding-left: 18px; border-left: 1px solid #dbe2ea; }
+.site-controls button { min-width: 32px; height: 30px; padding: 0 8px; border: 1px solid #cbd5e1; border-radius: 5px; background: #fff; color: #334155; cursor: pointer; font: 700 12px/1 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.site-controls button:hover { border-color: #2563eb; color: #2563eb; }
+.site-controls button:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+
+:root[data-theme="dark"] { color: #e5e7eb; background: #101826; }
+:root[data-theme="dark"] body, :root[data-theme="dark"] .site-shell { background: #101826; color: #e5e7eb; }
+:root[data-theme="dark"] .header, :root[data-theme="dark"] .signal, :root[data-theme="dark"] .downloads, :root[data-theme="dark"] .closing, :root[data-theme="dark"] .footer, :root[data-theme="dark"] .capabilities article, :root[data-theme="dark"] .download-grid, :root[data-theme="dark"] .download-card, :root[data-theme="dark"] .plugin-grid, :root[data-theme="dark"] .plugin { border-color: #2b3a50; }
+:root[data-theme="dark"] .brand, :root[data-theme="dark"] .hero h1, :root[data-theme="dark"] .hero h1 em, :root[data-theme="dark"] .intro h2, :root[data-theme="dark"] .closing h2, :root[data-theme="dark"] .capabilities h3, :root[data-theme="dark"] .screenshot-gallery figcaption b, :root[data-theme="dark"] .plugin h3, :root[data-theme="dark"] .market h3 { color: #f1f5f9; }
+:root[data-theme="dark"] nav, :root[data-theme="dark"] .lead, :root[data-theme="dark"] .intro > p, :root[data-theme="dark"] .capabilities p, :root[data-theme="dark"] .downloads .intro > p, :root[data-theme="dark"] .release-note, :root[data-theme="dark"] .plugin p, :root[data-theme="dark"] .market > p { color: #aab9ca; }
+:root[data-theme="dark"] .site-controls { border-color: #2b3a50; }
+:root[data-theme="dark"] .site-controls button, :root[data-theme="dark"] .ghost { border-color: #40516a; background: #172235; color: #dce6f2; }
+:root[data-theme="dark"] .site-controls button:hover, :root[data-theme="dark"] .ghost:hover { border-color: #60a5fa; background: #202e45; color: #fff; }
+:root[data-theme="dark"] .primary { background: #e2e8f0; color: #111827; }
+:root[data-theme="dark"] .primary:hover { background: #fff; }
+:root[data-theme="dark"] .hero-meta { color: #8da1b7; }
+:root[data-theme="dark"] .hero-meta b { color: #cbd5e1; }
+:root[data-theme="dark"] .preview, :root[data-theme="dark"] .screenshot-gallery figure, :root[data-theme="dark"] .download-card, :root[data-theme="dark"] .plugin { background: #151f30; }
+:root[data-theme="dark"] .signal, :root[data-theme="dark"] .downloads { background: #121c2b; color: #e5e7eb; }
+:root[data-theme="dark"] .signal div, :root[data-theme="dark"] .screenshot-gallery figcaption span, :root[data-theme="dark"] .download-card p, :root[data-theme="dark"] .download-card:hover p, :root[data-theme="dark"] .download-card:hover small { color: #aab9ca !important; }
+:root[data-theme="dark"] .download-card:hover, :root[data-theme="dark"] .plugin:hover { background: #1b2a40; color: #f8fafc; }
+:root[data-theme="dark"] .market { border-color: #40516a; background: #172235; }
+:root[data-theme="dark"] .footer { color: #8da1b7; }
 .hero { grid-template-columns: minmax(330px, .72fr) minmax(0, 1.28fr); min-height: 0; gap: 46px; padding-block: 72px 62px; }
 .eyebrow, .kicker { color: #2563eb; font-size: 11px; letter-spacing: .04em; }
 .eyebrow i { border-color: #2563eb; }
@@ -31,4 +56,4 @@ nav a:hover { color: #2563eb; }
 .closing { padding-block: 76px; border-color: #dbe2ea; }.link { color: #2563eb; }.link:hover { color: #1d4ed8; }.footer { min-height: 76px; border-color: #dbe2ea; color: #64748b; }.footer a:hover { color: #2563eb; }
 
 @media (max-width: 930px) { .hero { grid-template-columns: 1fr; gap: 36px; }.hero-product { max-width: 700px; }.intro { gap: 24px; } }
-@media (max-width: 640px) { .page-width { width: min(100% - 32px, 1160px); }.hero { padding-block: 52px; }.hero-product figcaption { font-size: 10px; }.signal div { font-size: 12px; }.desktop, .plugins { padding-block: 62px; }.downloads { padding-block: 62px; } }
+@media (max-width: 640px) { .page-width { width: min(100% - 32px, 1160px); }.header-actions { gap: 10px; }.site-controls { gap: 4px; padding-left: 10px; }.site-controls button { min-width: 30px; padding-inline: 6px; }.hero { padding-block: 52px; }.hero-product figcaption { font-size: 10px; }.signal div { font-size: 12px; }.desktop, .plugins { padding-block: 62px; }.downloads { padding-block: 62px; } }
