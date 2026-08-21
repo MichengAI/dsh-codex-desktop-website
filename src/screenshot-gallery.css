@@ -1,0 +1,13 @@
+.screenshot-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.screenshot-gallery .screenshot-wide {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .screenshot-gallery {
+    grid-template-columns: 1fr;
+  }
+}
