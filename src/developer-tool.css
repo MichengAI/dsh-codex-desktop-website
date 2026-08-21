@@ -19,7 +19,7 @@ nav a:hover { color: #2563eb; }
 .ghost { border-color: #cbd5e1; color: #374151; }.ghost:hover { background: #f1f5f9; }
 .hero-meta { gap: 8px 18px; color: #64748b; }.hero-meta b { color: #334155; }
 .hero-product { margin: 0; overflow: hidden; border: 1px solid #cbd5e1; border-radius: 8px; background: #111827; box-shadow: 0 16px 35px rgb(15 23 42 / 12%); }
-.hero-product img { display: block; width: 100%; aspect-ratio: 1.58; object-fit: cover; object-position: top; }
+.hero-product img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #020617; }
 .hero-product figcaption { display: flex; justify-content: space-between; padding: 11px 14px; border-top: 1px solid #334155; color: #cbd5e1; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; }
 .console { display: none; }
 .signal { border-color: #dbe2ea; background: #fff; }.signal div { min-height: 54px; color: #475569; font-family: inherit; font-size: 13px; letter-spacing: 0; }.signal i { color: #94a3b8; }

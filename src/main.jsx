@@ -4,6 +4,7 @@ import { App } from "./App.jsx";
 import "./styles.css";
 import "./screenshot-gallery.css";
 import "./developer-tool.css";
+import "./screenshot-lightbox.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>

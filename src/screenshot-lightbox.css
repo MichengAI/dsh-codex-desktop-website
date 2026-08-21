@@ -1,0 +1,66 @@
+.screenshot-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.screenshot-trigger:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -4px;
+}
+
+.screenshot-dialog {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 28px;
+  border: 0;
+  background: rgb(15 23 42 / 78%);
+}
+
+.screenshot-dialog > div {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  place-items: center;
+}
+
+.screenshot-dialog img {
+  display: block;
+  max-width: min(1180px, 92vw);
+  max-height: 86vh;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.screenshot-dialog button {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: max(0px, calc((100% - min(1180px, 92vw)) / 2));
+  padding: 8px 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 5px;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .screenshot-dialog { padding: 16px; }
+  .screenshot-dialog img { max-width: 100%; max-height: 82vh; }
+}
