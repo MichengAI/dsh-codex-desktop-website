@@ -8,12 +8,12 @@ body, .site-shell { background: #f8fafc; color: #111827; }
 .brand img { border-radius: 6px; }
 nav { color: #4b5563; font-weight: 600; }
 nav a:hover { color: #2563eb; }
-.hero { grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); min-height: 0; gap: 72px; padding-block: 78px 68px; }
+.hero { grid-template-columns: minmax(330px, .72fr) minmax(0, 1.28fr); min-height: 0; gap: 46px; padding-block: 72px 62px; }
 .eyebrow, .kicker { color: #2563eb; font-size: 11px; letter-spacing: .04em; }
 .eyebrow i { border-color: #2563eb; }
-.hero h1 { color: #111827; font-size: clamp(42px, 5vw, 66px); line-height: 1.04; letter-spacing: -.065em; }
+.hero h1 { color: #111827; font-size: clamp(38px, 4.2vw, 54px); line-height: 1.08; letter-spacing: -.055em; }
 .hero h1 em { color: #111827; font-style: normal; }
-.lead { color: #4b5563; line-height: 1.75; }
+.lead { max-width: 430px; color: #4b5563; font-size: 15px; line-height: 1.7; }
 .button { border-radius: 6px; box-shadow: none; }
 .primary { background: #111827; color: #fff; }.primary:hover { background: #374151; }
 .ghost { border-color: #cbd5e1; color: #374151; }.ghost:hover { background: #f1f5f9; }
@@ -23,7 +23,7 @@ nav a:hover { color: #2563eb; }
 .hero-product figcaption { display: flex; justify-content: space-between; padding: 11px 14px; border-top: 1px solid #334155; color: #cbd5e1; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; }
 .console { display: none; }
 .signal { border-color: #dbe2ea; background: #fff; }.signal div { min-height: 54px; color: #475569; font-family: inherit; font-size: 13px; letter-spacing: 0; }.signal i { color: #94a3b8; }
-.desktop, .plugins { padding-block: 86px; }.intro { gap: 74px; margin-bottom: 38px; }.intro h2, .closing h2 { color: #111827; font-size: clamp(32px, 4vw, 50px); line-height: 1.1; letter-spacing: -.055em; }.intro > p { color: #4b5563; }
+.desktop, .plugins { padding-block: 86px; }.intro { gap: 74px; margin-bottom: 38px; }.intro h2, .closing h2 { color: #111827; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; letter-spacing: -.045em; }.intro > p { color: #4b5563; }
 .desktop-grid { gap: 36px; }.preview, .screenshot-gallery figure { border-color: #dbe2ea; border-radius: 7px; background: #fff; }.capabilities article { border-color: #dbe2ea; }.capabilities article > b { color: #2563eb; }.capabilities h3 { color: #111827; }.capabilities p { color: #4b5563; }
 .screenshot-gallery { margin-top: 30px; gap: 18px; }.screenshot-gallery figcaption { background: #fff; }.screenshot-gallery figcaption b { color: #111827; }.screenshot-gallery figcaption span { color: #64748b; }
 .downloads { padding-block: 82px; background: #fff; color: #111827; border-block: 1px solid #dbe2ea; }.downloads .kicker, .downloads strong { color: #2563eb; }.downloads .intro > p, .release-note { color: #4b5563; }.download-grid { border-color: #dbe2ea; }.download-card { min-height: 190px; border-color: #dbe2ea; background: #fff; }.download-card:hover { background: #eff6ff; color: #111827; }.download-card small { color: #2563eb; }.download-card p, .download-card:hover p, .download-card:hover small { color: #64748b; }.release-note b, .release-note a { color: #2563eb; }

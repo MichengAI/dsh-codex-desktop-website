@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
@@ -27,6 +27,15 @@ function Kicker({ number, children }) { return <div className="kicker"><span>{nu
 export function App() {
   const [activeScreenshot, setActiveScreenshot] = useState(null);
 
+  useEffect(() => {
+    if (activeScreenshot === null) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setActiveScreenshot(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [activeScreenshot]);
+
   return <div className="site-shell">
     <header className="header page-width">
       <a className="brand" href="#top"><img src="/assets/brand-mark.png" alt="DSH Codex Desktop" /><span>DSH Codex Desktop</span></a>
@@ -36,8 +45,8 @@ export function App() {
       <section className="hero page-width" aria-labelledby="hero-title">
         <div>
           <p className="eyebrow"><i />DSH CODEX DESKTOP</p>
-          <h1 id="hero-title">Codex UI 和插件，<br /><em>装进一个桌面应用。</em></h1>
-          <p className="lead">DSH Codex Desktop 提供 Codex UI，并随安装包准备专家预设、技能管理、会话归档、IM Connect 和定时自动化。DeepSeek Harness 作为本地运行时与插件扩展基础。</p>
+          <h1 id="hero-title">Codex UI 与<br /><em>六个随附插件。</em></h1>
+          <p className="lead">DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect 和自动化带到桌面端。</p>
           <div className="actions"><a className="button primary" href={releaseUrl} target="_blank" rel="noreferrer">下载桌面端<Arrow /></a><a className="button ghost" href="#plugins">查看随附组件</a></div>
           <div className="hero-meta"><span><b>支持系统</b> Windows / macOS / Linux</span><span><b>运行方式</b> 本机服务</span><span><b>更新入口</b> GitHub Releases</span></div>
         </div>
@@ -55,6 +64,6 @@ export function App() {
       <section className="closing page-width"><div><p className="eyebrow"><i />GET STARTED</p><h2>从 Releases 下载，<br />安装后打开应用。</h2></div><div className="actions"><a className="button primary" href={releaseUrl} target="_blank" rel="noreferrer">打开最新发布页<Arrow /></a><a className="link" href={desktopRepositoryUrl} target="_blank" rel="noreferrer">查看桌面端仓库 <Arrow /></a></div></section>
     </main>
     <footer className="footer page-width"><p>DSH Codex Desktop 是由 Codex UI 与功能插件集合构成的社区工作台，基于 DeepSeek Harness 运行时与插件能力构建，并非 DeepSeek AI 官方产品。</p><div><a href={desktopRepositoryUrl} target="_blank" rel="noreferrer">桌面端仓库</a><a href={websiteRepositoryUrl} target="_blank" rel="noreferrer">官网源码</a></div></footer>
-    {activeScreenshot && <dialog className="screenshot-dialog" open aria-label={activeScreenshot.alt} onClick={(event) => { if (event.target === event.currentTarget) setActiveScreenshot(null); }}><div><button type="button" onClick={() => setActiveScreenshot(null)} aria-label="关闭大图">关闭 ×</button><img src={activeScreenshot.src} alt={activeScreenshot.alt} /></div></dialog>}
+    {activeScreenshot && <dialog className="screenshot-dialog" open aria-label={activeScreenshot.alt} onClick={() => setActiveScreenshot(null)}><div onClick={(event) => event.stopPropagation()}><button type="button" onClick={() => setActiveScreenshot(null)} aria-label="关闭大图">关闭 ×</button><img src={activeScreenshot.src} alt={activeScreenshot.alt} /></div></dialog>}
   </div>;
 }
