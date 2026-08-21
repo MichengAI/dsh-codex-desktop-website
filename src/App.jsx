@@ -1,4 +1,5 @@
 const repositoryUrl = "https://github.com/MichengAI/deepseek-harness-desktop";
+const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
 const releasesUrl = `${repositoryUrl}/releases`;
 const issuesUrl = `${repositoryUrl}/issues`;
 const upstreamUrl = "https://github.com/deepseek-ai/deepseek-harness";
@@ -54,7 +55,7 @@ export function App() {
           <a href="#features">功能</a>
           <a href="#downloads">平台</a>
           <a href="#security">安全</a>
-          <a href={repositoryUrl} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={websiteRepositoryUrl} target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </header>
 
@@ -68,7 +69,7 @@ export function App() {
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href={downloads[0].href}>获取 v0.1.4</a>
-              <a className="button button-secondary" href={repositoryUrl} target="_blank" rel="noreferrer">查看源码</a>
+              <a className="button button-secondary" href={websiteRepositoryUrl} target="_blank" rel="noreferrer">查看源码</a>
             </div>
             <div className="release-note"><span>当前版本：v0.1.4</span><span>最后更新：2026-08-14</span></div>
           </div>
@@ -132,7 +133,7 @@ export function App() {
 
       <footer className="site-footer page-width">
         <p>社区维护的非官方项目。</p>
-        <a href={repositoryUrl} target="_blank" rel="noreferrer">GitHub</a>
+        <a href={websiteRepositoryUrl} target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </div>
   );

@@ -8,7 +8,7 @@ Current release shown on the website: [`v0.1.4`](https://github.com/MichengAI/de
 
 ## Links
 
-- Website repository: [deepseek-harness-website](https://github.com/MichengAI/deepseek-harness-website)
+- Website repository: [dsh-codex-desktop-website](https://github.com/MichengAI/dsh-codex-desktop-website)
 - Desktop app: [deepseek-harness-desktop](https://github.com/MichengAI/deepseek-harness-desktop)
 - Releases: [GitHub Releases](https://github.com/MichengAI/deepseek-harness-desktop/releases)
 - Upstream: [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)

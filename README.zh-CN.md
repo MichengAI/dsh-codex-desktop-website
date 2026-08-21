@@ -8,7 +8,7 @@
 
 ## 相关链接
 
-- 官网项目：[deepseek-harness-website](https://github.com/MichengAI/deepseek-harness-website)
+- 官网项目：[dsh-codex-desktop-website](https://github.com/MichengAI/dsh-codex-desktop-website)
 - 桌面应用：[deepseek-harness-desktop](https://github.com/MichengAI/deepseek-harness-desktop)
 - 发布版本：[GitHub Releases](https://github.com/MichengAI/deepseek-harness-desktop/releases)
 - 上游项目：[deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
