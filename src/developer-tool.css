@@ -27,7 +27,7 @@ nav a:hover { color: #2563eb; }
 :root[data-theme="dark"] .primary:hover { background: #fff; }
 :root[data-theme="dark"] .hero-meta { color: #8da1b7; }
 :root[data-theme="dark"] .hero-meta b { color: #cbd5e1; }
-:root[data-theme="dark"] .preview, :root[data-theme="dark"] .screenshot-gallery figure, :root[data-theme="dark"] .download-card, :root[data-theme="dark"] .plugin { background: #151f30; }
+:root[data-theme="dark"] .preview, :root[data-theme="dark"] .screenshot-gallery figure, :root[data-theme="dark"] .screenshot-gallery figcaption, :root[data-theme="dark"] .download-card, :root[data-theme="dark"] .plugin { background: #151f30; }
 :root[data-theme="dark"] .signal, :root[data-theme="dark"] .downloads { background: #121c2b; color: #e5e7eb; }
 :root[data-theme="dark"] .signal div, :root[data-theme="dark"] .screenshot-gallery figcaption span, :root[data-theme="dark"] .download-card p, :root[data-theme="dark"] .download-card:hover p, :root[data-theme="dark"] .download-card:hover small { color: #aab9ca !important; }
 :root[data-theme="dark"] .download-card:hover, :root[data-theme="dark"] .plugin:hover { background: #1b2a40; color: #f8fafc; }
