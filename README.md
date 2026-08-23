@@ -62,3 +62,7 @@ scripts\             Build helpers
 tests\               Worker and build configuration tests
 wrangler.jsonc       Cloudflare Workers configuration
 ```
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for the five most recent development snapshots.

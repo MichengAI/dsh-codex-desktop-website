@@ -62,3 +62,7 @@ scripts\             构建辅助脚本
 tests\               Worker 与构建配置测试
 wrangler.jsonc       Cloudflare Workers 配置
 ```
+
+## 更新日志
+
+最近五个开发快照见 [CHANGELOG.zh-CN.md](CHANGELOG.zh-CN.md)。
