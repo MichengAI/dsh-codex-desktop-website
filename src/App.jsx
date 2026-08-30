@@ -86,14 +86,14 @@ const downloads = [
 ];
 
 const plugins = [
-  ["Codex UI", "@michengai/dsh-codex-ui", "提供项目、任务与会话工作区，把日常 Agent 协作收进一个桌面界面。", "https://github.com/MichengAI/dsh-codex-ui"],
-  ["Agency Agents", "@michengai/dsh-agency-agents", "按任务启用代码审查、架构、前端、后端与运维等专家预设。", "https://github.com/MichengAI/dsh-agency-agents"],
-  ["Skills Manager", "@michengai/dsh-skills-manager", "查看、启用、停用与管理本地及共享的 Agent 技能。", "https://github.com/MichengAI/dsh-skills-manager"],
-  ["Archive Manager", "@michengai/dsh-archive-manager", "检索、恢复或清理已归档会话，让历史上下文持续可用。", "https://github.com/MichengAI/dsh-archive-manager"],
-  ["IM Connect", "@michengai/dsh-im-connect", "集中配置钉钉、飞书、Lark、微信、企业微信、QQ 与 Telegram 等可用频道。", "https://github.com/MichengAI/dsh-im-connect"],
-  ["Automation", "@michengai/dsh-automation", "用内置定时能力管理周期任务，在同一工作台持续运行。", "https://github.com/MichengAI/dsh-automation"],
-  ["DSH Context", "dsh-context", "查看上下文构成、使用情况与演进，帮助判断何时需要整理或压缩。", "https://github.com/bowenliang123/dsh-context"],
-  ["DSH Better Sidebar", "dsh-better-sidebar", "提供类似 VS Code 的文件、编辑器、终端、Git 与浏览器侧边栏。", "https://github.com/omdsh-dev/DSH-better-sidebar"],
+  ["dsh-codex-ui", "@michengai/dsh-codex-ui", "提供项目、任务与会话工作区，把日常 Agent 协作收进一个桌面界面。", "https://github.com/MichengAI/dsh-codex-ui"],
+  ["dsh-agency-agents", "@michengai/dsh-agency-agents", "按任务启用代码审查、架构、前端、后端与运维等专家预设。", "https://github.com/MichengAI/dsh-agency-agents"],
+  ["dsh-skills-manager", "@michengai/dsh-skills-manager", "查看、启用、停用与管理本地及共享的 Agent 技能。", "https://github.com/MichengAI/dsh-skills-manager"],
+  ["dsh-archive-manager", "@michengai/dsh-archive-manager", "检索、恢复或清理已归档会话，让历史上下文持续可用。", "https://github.com/MichengAI/dsh-archive-manager"],
+  ["dsh-im-connect", "@michengai/dsh-im-connect", "集中配置钉钉、飞书、Lark、微信、企业微信、QQ 与 Telegram 等可用频道。", "https://github.com/MichengAI/dsh-im-connect"],
+  ["dsh-automation", "@michengai/dsh-automation", "用内置定时能力管理周期任务，在同一工作台持续运行。", "https://github.com/MichengAI/dsh-automation"],
+  ["dsh-context", "dsh-context", "查看上下文构成、使用情况与演进，帮助判断何时需要整理或压缩。", "https://github.com/bowenliang123/dsh-context"],
+  ["dsh-better-sidebar", "dsh-better-sidebar", "提供类似 VS Code 的文件、编辑器、终端、Git 与浏览器侧边栏。", "https://github.com/omdsh-dev/DSH-better-sidebar"],
 ];
 
 function Arrow() { return <span className="arrow" aria-hidden="true">↗</span>; }

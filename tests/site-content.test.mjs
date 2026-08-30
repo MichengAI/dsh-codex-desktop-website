@@ -4,6 +4,7 @@ import test from "node:test";
 
 const appSource = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
 const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+const faviconSource = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8");
 
 test("shows eight plugin cards before the five-release changelog", () => {
   const pluginData = appSource.match(/const plugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
@@ -25,7 +26,28 @@ test("places dshmarket in the ninth grid cell and ships the requested favicon", 
   assert.ok(pluginGridEnd > marketCard);
   assert.match(appSource.slice(marketCard, pluginGridEnd), /<h3>dshmarket<\/h3>/);
   assert.doesNotMatch(appSource, /<aside className="market">/);
-  assert.match(indexSource, /href="\/favicon\.png"/);
+  assert.match(indexSource, /href="\/favicon\.svg\?v=4"/);
   assert.match(indexSource, /整合八个功能插件/);
   assert.ok(existsSync(new URL("../public/favicon.png", import.meta.url)));
+  assert.ok(existsSync(new URL("../public/favicon.svg", import.meta.url)));
+  assert.match(faviconSource, /viewBox="94 90 325 325"/);
+  assert.match(faviconSource, /prefers-color-scheme: dark/);
+  assert.doesNotMatch(faviconSource, /<rect\b/);
+});
+
+test("uses exact project names for all plugin card titles", () => {
+  const projectNames = [
+    "dsh-codex-ui",
+    "dsh-agency-agents",
+    "dsh-skills-manager",
+    "dsh-archive-manager",
+    "dsh-im-connect",
+    "dsh-automation",
+    "dsh-context",
+    "dsh-better-sidebar",
+  ];
+
+  for (const projectName of projectNames) {
+    assert.match(appSource, new RegExp(`\\["${projectName}",`));
+  }
 });
