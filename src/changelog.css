@@ -1,0 +1,117 @@
+.changelog {
+  padding-block: 96px;
+}
+
+.changelog-intro {
+  align-items: end;
+}
+
+.release-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #dbe2ea;
+  list-style: none;
+}
+
+.release-list > li {
+  display: grid;
+  grid-template-columns: minmax(155px, .28fr) minmax(0, 1fr);
+  gap: clamp(34px, 6vw, 88px);
+  padding: 30px 0 33px;
+  border-bottom: 1px solid #dbe2ea;
+}
+
+.release-list > li.is-latest {
+  padding-inline: 24px;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+}
+
+.release-stamp {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.release-stamp span {
+  margin-bottom: 12px;
+  color: #2563eb;
+  font: 750 12px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.release-stamp strong {
+  color: #111827;
+  font-size: clamp(26px, 2.7vw, 36px);
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+.release-stamp time {
+  margin-top: 12px;
+  color: #64748b;
+  font: 600 13px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.release-copy ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.72;
+  list-style: none;
+}
+
+.release-copy li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.release-copy li::before {
+  position: absolute;
+  top: .73em;
+  left: 0;
+  width: 7px;
+  border-top: 2px solid #60a5fa;
+  content: "";
+}
+
+.release-copy a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 18px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+:root[data-theme="dark"] .release-list,
+:root[data-theme="dark"] .release-list > li {
+  border-color: #2b3a50;
+}
+
+:root[data-theme="dark"] .release-list > li.is-latest {
+  border-color: #31588a;
+  background: #14253b;
+}
+
+:root[data-theme="dark"] .release-stamp strong {
+  color: #f1f5f9;
+}
+
+:root[data-theme="dark"] .release-stamp time,
+:root[data-theme="dark"] .release-copy ul {
+  color: #aab9ca;
+}
+
+@media (max-width: 640px) {
+  .changelog { padding-block: 66px; }
+  .release-list > li { grid-template-columns: 1fr; gap: 22px; padding-block: 26px; }
+  .release-list > li.is-latest { padding-inline: 18px; }
+  .release-stamp { display: grid; grid-template-columns: 1fr auto; align-items: end; }
+  .release-stamp span { grid-column: 1 / -1; margin-bottom: 10px; }
+  .release-stamp time { margin: 0; }
+  .release-copy ul { font-size: 15px; }
+}

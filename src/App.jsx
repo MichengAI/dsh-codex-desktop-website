@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { recentDesktopReleases } from "./releases.js";
 
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
@@ -6,7 +7,7 @@ const releaseUrl = `${desktopRepositoryUrl}/releases/latest`;
 
 
 const translations = {
-  "页面导航": "Page navigation", "桌面端": "Desktop", "下载": "Downloads", "插件": "Plugins",
+  "页面导航": "Page navigation", "桌面端": "Desktop", "下载": "Downloads", "更新日志": "Changelog", "插件": "Plugins",
   "切换至暗色模式": "Switch to dark mode", "切换至亮色模式": "Switch to light mode", "切换至英文": "Switch to English", "切换至中文": "Switch to Chinese",
   "Codex UI 与": "Codex UI and", "六个随附插件。": "six bundled plugins.",
   "DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect 和自动化带到桌面端。": "DSH Codex Desktop brings Codex UI, expert presets, skill management, conversation archives, IM Connect, and automation to the desktop.",
@@ -29,6 +30,8 @@ const translations = {
   "GitHub Releases 保留各平台的最新安装包与历史版本。请选择与设备相符的安装包类型。": "GitHub Releases has the latest installers and release history for each platform. Choose the package that matches your device.",
   ".exe 安装器": ".exe installer", ".dmg 磁盘映像": ".dmg disk image", ".deb 软件包": ".deb package", "下载 Windows": "Download for Windows", "下载 Apple Silicon": "Download for Apple Silicon", "下载 Intel Mac": "Download for Intel Mac", "下载 Linux .deb": "Download Linux .deb", "下载 AppImage": "Download AppImage",
   "注意": "Note", "macOS 当前发布包尚未签名与公证，系统可能显示来源提示。完整发布记录与其他资产见": "Current macOS packages are not yet signed or notarized, so the system may show a source warning. Find release notes and other assets on",
+  "版本": "RELEASES", "最近 10 个版本": "Latest 10 releases", "跟进桌面端的每一次更新。": "Follow every recent desktop update.",
+  "以下内容整理自 GitHub Releases，按发布时间从新到旧排列。": "Compiled from GitHub Releases and ordered from newest to oldest.",
   "组件": "PLUGINS", "随附插件": "Bundled plugins", "六个独立插件，": "Six independent plugins", "覆盖常见工作环节。": "for everyday work.",
   "这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。": "These components are prepared in the DSH profile on first launch. Each has its own repository, version, and update path; plugin updates do not overwrite the desktop runtime.",
   "提供项目、任务与会话工作区，把日常 Agent 协作收进一个桌面界面。": "A desktop workspace for projects, tasks, and conversations.",
@@ -123,7 +126,7 @@ export function App() {
     <header className="header page-width">
       <a className="brand" href="#top"><img src="/assets/brand-mark.png" alt="DSH Codex Desktop" /><span>DSH Codex Desktop</span></a>
       <div className="header-actions">
-        <nav aria-label="页面导航"><a href="#desktop">桌面端</a><a href="#downloads">下载</a><a href="#plugins">插件</a><a href={desktopRepositoryUrl} target="_blank" rel="noreferrer">GitHub <Arrow /></a></nav>
+        <nav aria-label="页面导航"><a href="#desktop">桌面端</a><a href="#downloads">下载</a><a href="#changelog">更新日志</a><a href="#plugins">插件</a><a href={desktopRepositoryUrl} target="_blank" rel="noreferrer">GitHub <Arrow /></a></nav>
         <div className="site-controls" data-no-translate aria-label={locale === "zh" ? "显示与语言设置" : "Display and language settings"}>
           <button type="button" onClick={() => setTheme(theme === "light" ? "dark" : "light")} aria-label={theme === "light" ? (locale === "zh" ? "切换至暗色模式" : "Switch to dark mode") : (locale === "zh" ? "切换至亮色模式" : "Switch to light mode")} title={theme === "light" ? (locale === "zh" ? "切换至暗色模式" : "Switch to dark mode") : (locale === "zh" ? "切换至亮色模式" : "Switch to light mode")}>{theme === "light" ? "☾" : "☀"}</button>
           <button type="button" onClick={() => setLocale(locale === "zh" ? "en" : "zh")} aria-label={locale === "zh" ? "切换至英文" : "Switch to Chinese"}>{locale === "zh" ? "EN" : "中文"}</button>
@@ -149,6 +152,15 @@ export function App() {
         <style>{`.screenshot-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}.screenshot-gallery figure{min-width:0;margin:0;overflow:hidden;border:1px solid rgb(145 190 220 / 22%);border-radius:10px;background:#0b1b2b}.screenshot-gallery .screenshot-wide{grid-column:span 2}.screenshot-gallery img{display:block;width:100%;aspect-ratio:1.58;object-fit:cover;object-position:top;transition:transform .25s ease}.screenshot-gallery figure:hover img{transform:scale(1.025)}.screenshot-gallery figcaption{padding:13px 14px 15px}.screenshot-gallery figcaption b,.screenshot-gallery figcaption span{display:block}.screenshot-gallery figcaption b{margin-bottom:5px;font-size:13px}.screenshot-gallery figcaption span{color:#8fa9bd;font-size:11px;line-height:1.5}@media(max-width:930px){.screenshot-gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.screenshot-gallery{grid-template-columns:1fr;margin-top:28px}.screenshot-gallery .screenshot-wide{grid-column:auto}}`}</style>
       </section>
       <section className="downloads" id="downloads" aria-labelledby="downloads-title"><div className="page-width"><Kicker number="安装">当前发布版本</Kicker><div className="intro"><h2 id="downloads-title">选择系统和架构。</h2><p>GitHub Releases 保留各平台的最新安装包与历史版本。请选择与设备相符的安装包类型。</p></div><div className="download-grid">{downloads.map(([system, arch, type, label]) => <a className="download-card" key={`${system}-${arch}`} href={releaseUrl} target="_blank" rel="noreferrer"><small>{system}</small><h3>{arch}</h3><p>{type}</p><b>{label}<Arrow /></b></a>)}</div><p className="release-note"><b>注意</b><span>macOS 当前发布包尚未签名与公证，系统可能显示来源提示。完整发布记录与其他资产见 <a href={releaseUrl} target="_blank" rel="noreferrer">GitHub Releases <Arrow /></a>{locale === "zh" ? "。" : "."}</span></p></div></section>
+      <section className="changelog page-width" id="changelog" aria-labelledby="changelog-title">
+        <div className="intro changelog-intro"><div><Kicker number="版本">最近 10 个版本</Kicker><h2 id="changelog-title">跟进桌面端的每一次更新。</h2></div><p>以下内容整理自 GitHub Releases，按发布时间从新到旧排列。</p></div>
+        <ol className="release-list" data-no-translate>
+          {recentDesktopReleases.map((release, index) => <li className={index === 0 ? "is-latest" : ""} key={release.version}>
+            <div className="release-stamp"><span>{locale === "zh" ? (index === 0 ? "最新版本" : "桌面端") : (index === 0 ? "LATEST" : "DESKTOP")}</span><strong>{release.version}</strong><time dateTime={release.date}>{release.date}</time></div>
+            <div className="release-copy"><ul>{release[locale].map((item) => <li key={item}>{item}</li>)}</ul><a href={release.url} target="_blank" rel="noreferrer">{locale === "zh" ? "查看完整发布说明" : "View full release notes"}<Arrow /></a></div>
+          </li>)}
+        </ol>
+      </section>
       <section className="plugins page-width" id="plugins" aria-labelledby="plugins-title"><div className="intro plugin-intro"><div><Kicker number="组件">随附插件</Kicker><h2 id="plugins-title">六个独立插件，<br />覆盖常见工作环节。</h2></div><p>这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。</p></div><div className="plugin-grid">{plugins.map(([name, packageName, description, href], index) => <a className="plugin" key={packageName} href={href} target="_blank" rel="noreferrer"><div><small>{String(index + 1).padStart(2, "0")}</small><Arrow /></div><h3>{name}</h3><p>{description}</p><code>{packageName}</code></a>)}</div><aside className="market"><div><p className="eyebrow"><i />插件市场</p><h3>从 dshmarket 管理更多插件。</h3></div><p><code>dshmarket</code> 随桌面端提供，用于发现、安装、更新、启用和诊断其他 DSH 插件。</p></aside></section>
       <section className="closing page-width"><div><p className="eyebrow"><i />GET STARTED</p><h2>从 Releases 下载，<br />安装后打开应用。</h2></div><div className="actions"><a className="button primary" href={releaseUrl} target="_blank" rel="noreferrer">打开最新发布页<Arrow /></a><a className="link" href={desktopRepositoryUrl} target="_blank" rel="noreferrer">查看桌面端仓库 <Arrow /></a></div></section>
     </main>

@@ -2,11 +2,11 @@
 
 body, .site-shell { background: #f8fafc; color: #111827; }
 .site-shell { background-image: none; }
-.page-width { width: min(1160px, calc(100% - 48px)); }
+.page-width { width: min(1220px, calc(100% - 48px)); }
 .header { min-height: 68px; border-color: #dbe2ea; }
-.brand { color: #111827; font-weight: 700; }
+.brand { color: #111827; font-size: 16px; font-weight: 700; }
 .brand img { border-radius: 6px; }
-nav { color: #4b5563; font-weight: 600; }
+nav { color: #4b5563; font-size: 15px; font-weight: 600; }
 nav a:hover { color: #2563eb; }
 
 .header-actions { display: flex; align-items: center; gap: 20px; }
@@ -34,26 +34,26 @@ nav a:hover { color: #2563eb; }
 :root[data-theme="dark"] .market { border-color: #40516a; background: #172235; }
 :root[data-theme="dark"] .footer { color: #8da1b7; }
 .hero { grid-template-columns: minmax(330px, .72fr) minmax(0, 1.28fr); min-height: 0; gap: 46px; padding-block: 72px 62px; }
-.eyebrow, .kicker { color: #2563eb; font-size: 11px; letter-spacing: .04em; }
+.eyebrow, .kicker { color: #2563eb; font-size: 13px; letter-spacing: .04em; }
 .eyebrow i { border-color: #2563eb; }
 .hero h1 { color: #111827; font-size: clamp(38px, 4.2vw, 54px); line-height: 1.08; letter-spacing: -.055em; }
 .hero h1 em { color: #111827; font-style: normal; }
-.lead { max-width: 430px; color: #4b5563; font-size: 15px; line-height: 1.7; }
-.button { border-radius: 6px; box-shadow: none; }
+.lead { max-width: 470px; color: #4b5563; font-size: 17px; line-height: 1.75; }
+.button { border-radius: 6px; box-shadow: none; font-size: 15px; }
 .primary { background: #111827; color: #fff; }.primary:hover { background: #374151; }
 .ghost { border-color: #cbd5e1; color: #374151; }.ghost:hover { background: #f1f5f9; }
-.hero-meta { gap: 8px 18px; color: #64748b; }.hero-meta b { color: #334155; }
+.hero-meta { gap: 8px 18px; color: #64748b; font-size: 13px; line-height: 1.6; }.hero-meta b { color: #334155; }
 .hero-product { margin: 0; overflow: hidden; border: 1px solid #cbd5e1; border-radius: 8px; background: #111827; box-shadow: 0 16px 35px rgb(15 23 42 / 12%); }
 .hero-product img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #020617; }
-.hero-product figcaption { display: flex; justify-content: space-between; padding: 11px 14px; border-top: 1px solid #334155; color: #cbd5e1; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 11px; }
+.hero-product figcaption { display: flex; justify-content: space-between; padding: 12px 14px; border-top: 1px solid #334155; color: #cbd5e1; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
 .console { display: none; }
-.signal { border-color: #dbe2ea; background: #fff; }.signal div { min-height: 54px; color: #475569; font-family: inherit; font-size: 13px; letter-spacing: 0; }.signal i { color: #94a3b8; }
-.desktop, .plugins { padding-block: 86px; }.intro { gap: 74px; margin-bottom: 38px; }.intro h2, .closing h2 { color: #111827; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; letter-spacing: -.045em; }.intro > p { color: #4b5563; }
-.desktop-grid { gap: 36px; }.preview, .screenshot-gallery figure { border-color: #dbe2ea; border-radius: 7px; background: #fff; }.capabilities article { border-color: #dbe2ea; }.capabilities article > b { color: #2563eb; }.capabilities h3 { color: #111827; }.capabilities p { color: #4b5563; }
-.screenshot-gallery { margin-top: 30px; gap: 18px; }.screenshot-gallery figcaption { background: #fff; }.screenshot-gallery figcaption b { color: #111827; }.screenshot-gallery figcaption span { color: #64748b; }
-.downloads { padding-block: 82px; background: #fff; color: #111827; border-block: 1px solid #dbe2ea; }.downloads .kicker, .downloads strong { color: #2563eb; }.downloads .intro > p, .release-note { color: #4b5563; }.download-grid { border-color: #dbe2ea; }.download-card { min-height: 190px; border-color: #dbe2ea; background: #fff; }.download-card:hover { background: #eff6ff; color: #111827; }.download-card small { color: #2563eb; }.download-card p, .download-card:hover p, .download-card:hover small { color: #64748b; }.release-note b, .release-note a { color: #2563eb; }
-.plugin-grid { border-color: #dbe2ea; }.plugin { min-height: 220px; border-color: #dbe2ea; background: #fff; }.plugin:hover { background: #f8fafc; color: #111827; transform: none; }.plugin > div, .plugin code, .market code { color: #2563eb; }.plugin h3, .market h3 { color: #111827; }.plugin p, .market > p { color: #4b5563; }.market { border-color: #cbd5e1; border-radius: 7px; background: #f1f5f9; }
-.closing { padding-block: 76px; border-color: #dbe2ea; }.link { color: #2563eb; }.link:hover { color: #1d4ed8; }.footer { min-height: 76px; border-color: #dbe2ea; color: #64748b; }.footer a:hover { color: #2563eb; }
+.signal { border-color: #dbe2ea; background: #fff; }.signal div { min-height: 58px; color: #475569; font-family: inherit; font-size: 15px; letter-spacing: 0; }.signal i { color: #94a3b8; }
+.desktop, .plugins { padding-block: 86px; }.intro { gap: 74px; margin-bottom: 38px; }.intro h2, .closing h2 { color: #111827; font-size: clamp(32px, 3.35vw, 46px); line-height: 1.12; letter-spacing: -.045em; }.intro > p { color: #4b5563; font-size: 17px; line-height: 1.75; }
+.desktop-grid { gap: 36px; }.preview, .screenshot-gallery figure { border-color: #dbe2ea; border-radius: 7px; background: #fff; }.capabilities article { border-color: #dbe2ea; }.capabilities article > b { color: #2563eb; font-size: 13px; }.capabilities h3 { color: #111827; font-size: 19px; }.capabilities p { color: #4b5563; font-size: 15px; line-height: 1.7; }
+.screenshot-gallery { margin-top: 30px; gap: 18px; }.screenshot-gallery figcaption { background: #fff; }.screenshot-gallery figcaption b { color: #111827; font-size: 15px !important; }.screenshot-gallery figcaption span { color: #64748b; font-size: 14px !important; line-height: 1.6 !important; }
+.downloads { padding-block: 82px; background: #fff; color: #111827; border-block: 1px solid #dbe2ea; }.downloads .kicker, .downloads strong { color: #2563eb; }.downloads .intro > p, .release-note { color: #4b5563; }.download-grid { border-color: #dbe2ea; }.download-card { min-height: 202px; border-color: #dbe2ea; background: #fff; }.download-card:hover { background: #eff6ff; color: #111827; }.download-card small { color: #2563eb; font-size: 13px; }.download-card h3 { font-size: 20px; }.download-card p, .download-card:hover p, .download-card:hover small { color: #64748b; font-size: 15px; }.download-card > b { font-size: 14px; }.release-note { font-size: 15px; line-height: 1.75; }.release-note b, .release-note a { color: #2563eb; }
+.plugin-grid { border-color: #dbe2ea; }.plugin { min-height: 240px; border-color: #dbe2ea; background: #fff; }.plugin:hover { background: #f8fafc; color: #111827; transform: none; }.plugin > div, .plugin code, .market code { color: #2563eb; }.plugin > div { font-size: 13px; }.plugin h3, .market h3 { color: #111827; }.plugin p, .market > p { color: #4b5563; font-size: 15px; line-height: 1.72; }.plugin code, .market code { font-size: 12px; }.market { border-color: #cbd5e1; border-radius: 7px; background: #f1f5f9; }
+.closing { padding-block: 76px; border-color: #dbe2ea; }.link { color: #2563eb; font-size: 15px; }.link:hover { color: #1d4ed8; }.footer { min-height: 82px; border-color: #dbe2ea; color: #64748b; font-size: 13px; }.footer a:hover { color: #2563eb; }
 
 @media (max-width: 930px) { .hero { grid-template-columns: 1fr; gap: 36px; }.hero-product { max-width: 700px; }.intro { gap: 24px; } }
-@media (max-width: 640px) { .page-width { width: min(100% - 32px, 1160px); }.header-actions { gap: 10px; }.site-controls { gap: 4px; padding-left: 10px; }.site-controls button { min-width: 30px; padding-inline: 6px; }.hero { padding-block: 52px; }.hero-product figcaption { font-size: 10px; }.signal div { font-size: 12px; }.desktop, .plugins { padding-block: 62px; }.downloads { padding-block: 62px; } }
+@media (max-width: 640px) { .page-width { width: min(100% - 32px, 1220px); }.header-actions { gap: 10px; }.site-controls { gap: 4px; padding-left: 10px; }.site-controls button { min-width: 30px; padding-inline: 6px; }.hero { padding-block: 52px; }.hero-product figcaption { font-size: 12px; }.signal div { font-size: 14px; }.desktop, .plugins { padding-block: 62px; }.downloads { padding-block: 62px; } }

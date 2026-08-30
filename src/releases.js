@@ -1,0 +1,168 @@
+export const recentDesktopReleases = [
+  {
+    version: "v1.0.39",
+    date: "2026-08-30",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.39",
+    zh: [
+      "为 Ubuntu、Debian 及其他兼容发行版新增原生 Linux ARM64 / aarch64 安装包，同时提供 .deb 与 .AppImage 制品。",
+      "新增 GitHub 托管的原生 ARM64 打包任务与打包应用冒烟测试，不依赖未经验证的交叉编译。",
+      "新增经过校验的 Node.js 24.20.0 Linux ARM64 可执行文件哈希，并在发布前检查架构专属的 latest-linux-arm64.yml 更新元数据。",
+      "更新中英文下载说明、系统要求与开发文档，使 Linux x64 / ARM64 支持保持一致。",
+    ],
+    en: [
+      "Added native Linux ARM64 / aarch64 packages for Ubuntu, Debian, and other compatible distributions, with both .deb and .AppImage artifacts.",
+      "Added a native GitHub-hosted ARM64 packaging job and packaged-app smoke test instead of relying on unverified cross-compilation.",
+      "Added the verified Node.js 24.20.0 Linux ARM64 executable checksum and a release guard for the architecture-specific latest-linux-arm64.yml update metadata.",
+      "Updated the English and Chinese download, system-requirement, and development documentation for Linux x64 / ARM64 parity.",
+    ],
+  },
+  {
+    version: "v1.0.38",
+    date: "2026-08-30",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.38",
+    zh: [
+      "将内置的六个 MichengAI 产品更新到 Codex UI 0.2.94、IM Connect 0.1.26、Automation 0.1.22、Skills Manager 0.1.31、Archive Manager 0.1.19 和 Agency Agents 0.1.22。",
+      "将内置生态组件更新到 dsh-context 0.38.3、DSH Better Sidebar 0.17.1、MCP Connector 0.2.29 和 dshmarket 1.38.0。",
+      "刷新供全新安装和缺包自修复使用的离线插件目录；已有 Profile 可通过插件市场升级到相同版本，桌面端不会静默覆盖用户主动选择的插件版本。",
+      "官方 DSH 运行时继续使用 npm 当前版本 0.1.1-rc.2；仅提供源码的 0.1.2 Alpha 暂不进入桌面稳定通道。",
+    ],
+    en: [
+      "Updated the six bundled MichengAI products to Codex UI 0.2.94, IM Connect 0.1.26, Automation 0.1.22, Skills Manager 0.1.31, Archive Manager 0.1.19, and Agency Agents 0.1.22.",
+      "Updated bundled ecosystem components to dsh-context 0.38.3, DSH Better Sidebar 0.17.1, MCP Connector 0.2.29, and dshmarket 1.38.0.",
+      "Refreshed the offline plugin catalog used by fresh installs and missing-package repair. Existing profiles can apply the same versions through the plugin market without the desktop silently overriding user-selected package versions.",
+      "Kept the official DSH runtime on the current npm release, 0.1.1-rc.2; the source-only 0.1.2 Alpha remains outside the stable desktop channel.",
+    ],
+  },
+  {
+    version: "v1.0.37",
+    date: "2026-08-27",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.37",
+    zh: [
+      "让浅色和深色桌面标题栏同步 Codex 风格渐变与当前 DSH 配色，并覆盖设置、键盘快捷键和关于窗口。",
+      "原生标题栏菜单关闭后会清除选中状态，点击菜单外部不再留下视觉上的激活样式。",
+      "恢复 DSH 视图和桌面设置窗口的 Escape 行为：普通弹层自行处理 Escape，桌面兜底仅关闭可见的设置对话框。",
+      "插件市场批量更新会等待整个批次完成后再重启 DSH 运行时，并加入有界超时和安全重载回退。",
+    ],
+    en: [
+      "Synced light and dark desktop title bars with the Codex-style gradient and active DSH color scheme across Settings, Keyboard Shortcuts, and About windows.",
+      "Cleared native title-bar menu selection after a dismissed popup so buttons no longer remain visually active.",
+      "Restored Escape behavior across the DSH view and desktop settings: ordinary popups handle Escape themselves, while the desktop fallback only closes the visible Settings dialog.",
+      "Made marketplace bulk updates wait for the complete batch before recycling the DSH runtime, with a bounded timeout and safe reload fallback.",
+    ],
+  },
+  {
+    version: "v1.0.36",
+    date: "2026-08-27",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.36",
+    zh: [
+      "将内置运行时更新到 Node.js 24.20.0 与 pnpm 11.24.0，并校验全部支持平台的可执行文件哈希。",
+      "将桌面工具链更新到 Electron 44.0.0、TypeScript 7.0.2、@electron/notarize 3.1.1 与 @types/node 26.4.0。",
+      "将 Codex UI 更新到 0.2.89、Automation 更新到 0.1.21、Skills Manager 更新到 0.1.25、Archive Manager 更新到 0.1.16、dsh-context 更新到 0.33.1、MCP Connector 更新到 0.2.24，并将 dshmarket 更新到 1.31.1。",
+      "将打包工作流升级到 Checkout、Setup Node、pnpm Setup、Upload Artifact 与 Download Artifact 的当前主版本；其余直接依赖和内置依赖也已核对为最新版。",
+    ],
+    en: [
+      "Updated the bundled runtime to Node.js 24.20.0 and pnpm 11.24.0, including verified executable checksums for every supported platform.",
+      "Updated the desktop toolchain to Electron 44.0.0, TypeScript 7.0.2, @electron/notarize 3.1.1, and @types/node 26.4.0.",
+      "Updated Codex UI to 0.2.89, Automation to 0.1.21, Skills Manager to 0.1.25, Archive Manager to 0.1.16, dsh-context to 0.33.1, MCP Connector to 0.2.24, and dshmarket to 1.31.1.",
+      "Updated the packaging workflow to the current major releases of Checkout, Setup Node, pnpm Setup, Upload Artifact, and Download Artifact; all other direct and bundled dependencies were verified as current.",
+    ],
+  },
+  {
+    version: "v1.0.35",
+    date: "2026-08-26",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.35",
+    zh: [
+      "移除设置、键盘快捷键和关于窗口中的 Electron 原生菜单栏，按下 Alt 时不再显示英文 File / Edit / View / Window 菜单。",
+    ],
+    en: [
+      "Removed Electron's native menu bar from Settings, Keyboard Shortcuts, and About windows so pressing Alt can no longer reveal an English File / Edit / View / Window menu.",
+    ],
+  },
+  {
+    version: "v1.0.34",
+    date: "2026-08-26",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.34",
+    zh: [
+      "将 dsh-mcp-connector 0.2.21 加入内置离线目录，支持通过 OAuth、API Key、HTTP、stdio 与 JSON 配置管理 MCP 连接。",
+      "新增独立更新设置页，提供自动检查并提醒、自动下载后安装前提醒和仅手动检查三种策略。",
+      "为打包版本新增延迟且不阻塞启动的更新检查；发现新版本时在后台提醒，安装和重启始终需要用户明确操作。",
+      "将 Codex UI 更新到 0.2.88，并刷新兼容的开发依赖。",
+      "让社区插件仓库装配方式与 Web Profile 的官方运行时隔离模型保持一致，不再把预发布 DSH peer 重复安装进插件 Profile。",
+    ],
+    en: [
+      "Added dsh-mcp-connector 0.2.21 to the bundled offline catalog for OAuth, API-key, HTTP, stdio, and JSON-based MCP connection management.",
+      "Added a dedicated Updates settings page with automatic check-and-notify, automatic download with install confirmation, and manual-only policies.",
+      "Added a delayed, non-blocking startup update check for packaged builds. New versions notify in the background, while installation and restart always require explicit user action.",
+      "Updated Codex UI to 0.2.88 and refreshed compatible development dependencies.",
+      "Aligned community-store assembly with the Web Profile's isolated official-runtime model so prerelease DSH peers are not duplicated into the plugin Profile.",
+    ],
+  },
+  {
+    version: "v1.0.33",
+    date: "2026-08-26",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.33",
+    zh: [
+      "新增产品预览截图，同时展示 dsh-context 上下文管理与 DSH Better Sidebar 文件浏览器。",
+      "对 Windows 短暂文件占用导致的替换失败增加重试，避免 Profile 更新被临时锁中断。",
+    ],
+    en: [
+      "Added a product preview showing dsh-context management alongside the DSH Better Sidebar file explorer.",
+      "Retried transient Windows file replacement failures so Profile updates are not interrupted by short-lived file locks.",
+    ],
+  },
+  {
+    version: "v1.0.32",
+    date: "2026-08-25",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.32",
+    zh: [
+      "新增 dsh-context 0.32.0 上下文管理与 dsh-better-sidebar 0.16.1 可扩展工作区侧边栏。",
+      "将内置 MichengAI 产品更新到 Codex UI 0.2.87、IM Connect 0.1.24、Automation 0.1.18、Skills Manager 0.1.24、Archive Manager 0.1.14 和 Agency Agents 0.1.21。",
+      "将内置插件市场更新到 dshmarket 1.29.2。",
+      "扩展首次启动离线插件目录，新旧 Profile 都会通过自修复补种流程获得两个生态插件。",
+    ],
+    en: [
+      "Added dsh-context 0.32.0 for context management and dsh-better-sidebar 0.16.1 for an extensible workspace sidebar.",
+      "Updated the bundled MichengAI products to Codex UI 0.2.87, IM Connect 0.1.24, Automation 0.1.18, Skills Manager 0.1.24, Archive Manager 0.1.14, and Agency Agents 0.1.21.",
+      "Updated the bundled plugin market to dshmarket 1.29.2.",
+      "Extended the offline first-launch catalog so new and existing Profiles receive both ecosystem plugins through the self-healing seed path.",
+    ],
+  },
+  {
+    version: "v1.0.31",
+    date: "2026-08-25",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.31",
+    zh: [
+      "新增 Codex 风格任务通知，覆盖任务完成、审批和问题提醒，并提供任务栏标记与通知偏好。",
+      "新增原生内联回复，将输入准确发送回产生通知的任务，并支持 Windows Action Center 与冷启动激活。",
+      "新增桌面通知身份、紧凑来源图标、带任务名称的标题和国际化操作。",
+      "新增独立通知设置页，并分别控制任务完成、审批和问题通知。",
+      "整个桌面外壳改为跟随 DeepSeek Harness 内部选择的语言。",
+      "修复任务完成通知错误显示任务最早内容而不是最新助手结果的问题。",
+    ],
+    en: [
+      "Added Codex-style task notifications for completed work, approvals, and questions, with taskbar badges and notification preferences.",
+      "Added native inline replies that return text to the exact task that produced the notification, including Windows Action Center and cold-start activation.",
+      "Added the desktop notification identity, compact source icon, task-aware titles, and localized actions.",
+      "Added a dedicated Notifications settings page with independent controls for completion, approval, and question notifications.",
+      "Made the entire desktop shell follow the language selected inside DeepSeek Harness.",
+      "Fixed completion notifications showing a task's earliest text instead of its latest assistant result.",
+    ],
+  },
+  {
+    version: "v1.0.30",
+    date: "2026-08-25",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.30",
+    zh: [
+      "在未配置 Developer ID 证书时，对 macOS Apple Silicon 与 Intel 完整应用包执行 ad-hoc codesign。",
+      "上传安装包前严格验证整个 macOS 应用签名，避免再次发布系统提示应用已损坏的 DMG 或 ZIP。",
+      "将安装目录根图标限定为 Windows 专用，避免无关 ICO 文件进入 macOS 应用包并阻断签名。",
+      "保留未来 Developer ID 正式签名路径，配置证书后会自动替换 ad-hoc 兜底。",
+    ],
+    en: [
+      "Added ad-hoc codesigning for complete macOS Apple Silicon and Intel app bundles when no Developer ID certificate is configured.",
+      "Added strict whole-bundle signature verification before uploading macOS artifacts to prevent damaged-app DMG or ZIP releases.",
+      "Scoped the loose installation-directory icon to Windows so an unrelated ICO can no longer block macOS signing.",
+      "Preserved the future Developer ID signing path so configured certificates replace the ad-hoc fallback automatically.",
+    ],
+  },
+];
