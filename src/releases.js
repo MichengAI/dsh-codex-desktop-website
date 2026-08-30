@@ -1,4 +1,4 @@
-export const recentDesktopReleases = [
+const desktopReleaseHistory = [
   {
     version: "v1.0.39",
     date: "2026-08-30",
@@ -166,3 +166,5 @@ export const recentDesktopReleases = [
     ],
   },
 ];
+
+export const recentDesktopReleases = desktopReleaseHistory.slice(0, 5);

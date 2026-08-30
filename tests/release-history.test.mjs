@@ -3,10 +3,10 @@ import test from "node:test";
 
 import { recentDesktopReleases } from "../src/releases.js";
 
-test("publishes exactly the latest ten desktop releases", () => {
-  assert.equal(recentDesktopReleases.length, 10);
+test("publishes exactly the latest five desktop releases", () => {
+  assert.equal(recentDesktopReleases.length, 5);
   assert.equal(recentDesktopReleases[0].version, "v1.0.39");
-  assert.equal(recentDesktopReleases.at(-1).version, "v1.0.30");
+  assert.equal(recentDesktopReleases.at(-1).version, "v1.0.35");
 });
 
 test("keeps release entries bilingual, ordered, and linked to their tags", () => {

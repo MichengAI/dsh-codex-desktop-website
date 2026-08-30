@@ -1,5 +1,5 @@
 .changelog {
-  padding-block: 96px;
+  padding-block: 104px;
 }
 
 .changelog-intro {
@@ -7,13 +7,25 @@
 }
 
 .release-list {
+  position: relative;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 48px;
   border-top: 1px solid #dbe2ea;
   list-style: none;
 }
 
+.release-list::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 2px;
+  background: #bfdbfe;
+  content: "";
+}
+
 .release-list > li {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(155px, .28fr) minmax(0, 1fr);
   gap: clamp(34px, 6vw, 88px);
@@ -21,10 +33,32 @@
   border-bottom: 1px solid #dbe2ea;
 }
 
+.release-list > li::before {
+  position: absolute;
+  z-index: 1;
+  top: 37px;
+  left: -43px;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #f8fafc;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 0 2px #93c5fd;
+  content: "";
+}
+
 .release-list > li.is-latest {
-  padding-inline: 24px;
+  padding-inline: 28px;
   border: 1px solid #bfdbfe;
   background: #eff6ff;
+}
+
+.release-list > li.is-latest::before {
+  width: 18px;
+  height: 18px;
+  margin: -2px;
+  background: #2563eb;
+  box-shadow: 0 0 0 3px #bfdbfe;
 }
 
 .release-stamp {
@@ -36,13 +70,13 @@
 .release-stamp span {
   margin-bottom: 12px;
   color: #2563eb;
-  font: 750 12px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font: 750 14px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
   letter-spacing: .08em;
 }
 
 .release-stamp strong {
   color: #111827;
-  font-size: clamp(26px, 2.7vw, 36px);
+  font-size: clamp(30px, 2.8vw, 40px);
   line-height: 1;
   letter-spacing: -.05em;
 }
@@ -50,7 +84,7 @@
 .release-stamp time {
   margin-top: 12px;
   color: #64748b;
-  font: 600 13px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font: 600 15px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
 }
 
 .release-copy ul {
@@ -59,8 +93,8 @@
   margin: 0;
   padding: 0;
   color: #475569;
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 18px;
+  line-height: 1.76;
   list-style: none;
 }
 
@@ -83,7 +117,7 @@
   align-items: center;
   margin-top: 18px;
   color: #2563eb;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 750;
 }
 
@@ -97,6 +131,14 @@
   background: #14253b;
 }
 
+:root[data-theme="dark"] .release-list::before {
+  background: #31588a;
+}
+
+:root[data-theme="dark"] .release-list > li::before {
+  border-color: #101826;
+}
+
 :root[data-theme="dark"] .release-stamp strong {
   color: #f1f5f9;
 }
@@ -107,11 +149,14 @@
 }
 
 @media (max-width: 640px) {
-  .changelog { padding-block: 66px; }
+  .changelog { padding-block: 72px; }
+  .release-list { padding-left: 32px; }
+  .release-list::before { left: 7px; }
   .release-list > li { grid-template-columns: 1fr; gap: 22px; padding-block: 26px; }
-  .release-list > li.is-latest { padding-inline: 18px; }
+  .release-list > li::before { top: 32px; left: -32px; }
+  .release-list > li.is-latest { padding-inline: 20px; }
   .release-stamp { display: grid; grid-template-columns: 1fr auto; align-items: end; }
   .release-stamp span { grid-column: 1 / -1; margin-bottom: 10px; }
   .release-stamp time { margin: 0; }
-  .release-copy ul { font-size: 15px; }
+  .release-copy ul { font-size: 17px; }
 }
