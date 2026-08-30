@@ -6,7 +6,7 @@ const appSource = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8
 const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const faviconSource = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8");
 
-test("shows eight plugin cards before the five-release changelog", () => {
+test("shows nine bundled component cards before the five-release changelog", () => {
   const pluginData = appSource.match(/const plugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const pluginCount = (pluginData.match(/^  \["/gm) ?? []).length;
   const pluginsSection = appSource.indexOf('<section className="plugins page-width"');
@@ -27,7 +27,7 @@ test("places dshmarket in the ninth grid cell and ships the requested favicon", 
   assert.match(appSource.slice(marketCard, pluginGridEnd), /<h3>dshmarket<\/h3>/);
   assert.doesNotMatch(appSource, /<aside className="market">/);
   assert.match(indexSource, /href="\/favicon\.svg\?v=4"/);
-  assert.match(indexSource, /整合八个功能插件/);
+  assert.match(indexSource, /整合常用内置插件/);
   assert.ok(existsSync(new URL("../public/favicon.png", import.meta.url)));
   assert.ok(existsSync(new URL("../public/favicon.svg", import.meta.url)));
   assert.match(faviconSource, /viewBox="94 90 325 325"/);
@@ -50,4 +50,12 @@ test("uses exact project names for all plugin card titles", () => {
   for (const projectName of projectNames) {
     assert.match(appSource, new RegExp(`\\["${projectName}",`));
   }
+});
+
+test("uses descriptive labels instead of numeric plugin card labels", () => {
+  const labels = ["主界面", "专家预设", "技能管理", "会话归档", "消息连接", "自动化任务", "上下文管理", "增强侧边栏", "插件市场"];
+
+  for (const label of labels) assert.match(appSource, new RegExp(`>${label}<|"${label}"`));
+  assert.doesNotMatch(appSource, /String\(index \+ 1\)\.padStart/);
+  assert.match(appSource, /Codex UI 以及<br \/><em>常用内置插件。<\/em>/);
 });
