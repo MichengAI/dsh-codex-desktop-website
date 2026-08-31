@@ -14,6 +14,14 @@ nav a:hover { color: #2563eb; }
 .site-controls button { min-width: 36px; height: 34px; padding: 0 9px; border: 1px solid #cbd5e1; border-radius: 5px; background: #fff; color: #334155; cursor: pointer; font: 700 14px/1 ui-monospace, SFMono-Regular, Consolas, monospace; }
 .site-controls button:hover { border-color: #2563eb; color: #2563eb; }
 .site-controls button:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+.official-support { display: block; background: #2563eb; color: #fff; }
+.official-support > span { display: grid; grid-template-columns: minmax(max-content, .8fr) minmax(max-content, 1fr) max-content; align-items: center; gap: 24px; min-height: 64px; }
+.official-support strong, .official-support b { font-size: 17px; }
+.official-support strong { display: inline-flex; align-items: center; gap: 10px; letter-spacing: -.01em; }
+.official-support strong i { width: 9px; height: 9px; border: 2px solid #fff; border-radius: 50%; background: #86efac; box-shadow: 0 0 0 5px rgb(255 255 255 / 14%); }
+.official-support > span > span { font: 700 17px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.official-support b { justify-self: end; text-decoration: underline; text-decoration-color: rgb(255 255 255 / 55%); text-underline-offset: 4px; }
+.official-support:hover { background: #1d4ed8; }
 
 :root[data-theme="dark"] { color: #e5e7eb; background: #101826; }
 :root[data-theme="dark"] body, :root[data-theme="dark"] .site-shell { background: #101826; color: #e5e7eb; }
@@ -58,5 +66,5 @@ nav a:hover { color: #2563eb; }
 .plugin-grid { border-color: #dbe2ea; }.plugin { min-height: 268px; border-color: #dbe2ea; background: #fff; }.plugin:hover { background: #f8fafc; color: #111827; transform: none; }.plugin > div, .plugin code, .market code { color: #2563eb; }.plugin > div { font-size: 14px; }.plugin h3, .market h3 { color: #111827; font-size: 24px; }.plugin p, .market > p { color: #4b5563; font-size: 17px; line-height: 1.75; }.plugin code, .market code { font-size: 14px; }.plugin-market { background: #eff6ff; }.plugin-market:hover { background: #dbeafe; }.plugin-market h3 { color: #1d4ed8; }.market { border-color: #cbd5e1; border-radius: 7px; background: #f1f5f9; }
 .closing { padding-block: 86px; border-color: #dbe2ea; }.link { color: #2563eb; font-size: 17px; }.link:hover { color: #1d4ed8; }.footer { min-height: 92px; border-color: #dbe2ea; color: #64748b; font-size: 15px; }.footer a:hover { color: #2563eb; }
 
-@media (max-width: 930px) { .hero { grid-template-columns: 1fr; gap: 36px; }.hero-product { max-width: 700px; }.intro { gap: 24px; } }
-@media (max-width: 640px) { .page-width { width: min(100% - 32px, 1320px); }.header-actions { gap: 10px; }.site-controls { gap: 4px; padding-left: 10px; }.site-controls button { min-width: 32px; padding-inline: 7px; }.hero { padding-block: 58px; }.hero-product figcaption { font-size: 13px; }.signal div { font-size: 15px; }.desktop, .plugins { padding-block: 70px; }.downloads { padding-block: 70px; } }
+@media (max-width: 930px) { .official-support > span { grid-template-columns: 1fr max-content; gap: 4px 20px; padding-block: 12px; }.official-support > span > span { grid-column: 1; }.official-support b { grid-column: 2; grid-row: 1 / span 2; }.hero { grid-template-columns: 1fr; gap: 36px; }.hero-product { max-width: 700px; }.intro { gap: 24px; } }
+@media (max-width: 640px) { .page-width { width: min(100% - 32px, 1320px); }.header-actions { gap: 10px; }.site-controls { gap: 4px; padding-left: 10px; }.site-controls button { min-width: 32px; padding-inline: 7px; }.official-support > span { display: flex; min-height: 0; align-items: flex-start; flex-direction: column; gap: 6px; padding-block: 15px; }.official-support strong, .official-support b, .official-support > span > span { font-size: 15px; }.official-support b { align-self: flex-start; }.hero { padding-block: 58px; }.hero-product figcaption { font-size: 13px; }.signal div { font-size: 15px; }.desktop, .plugins { padding-block: 70px; }.downloads { padding-block: 70px; } }

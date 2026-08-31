@@ -5,8 +5,8 @@ import { recentDesktopReleases } from "../src/releases.js";
 
 test("publishes exactly the latest five desktop releases", () => {
   assert.equal(recentDesktopReleases.length, 5);
-  assert.equal(recentDesktopReleases[0].version, "v1.0.39");
-  assert.equal(recentDesktopReleases.at(-1).version, "v1.0.35");
+  assert.equal(recentDesktopReleases[0].version, "v1.0.40");
+  assert.equal(recentDesktopReleases.at(-1).version, "v1.0.36");
 });
 
 test("keeps release entries bilingual, ordered, and linked to their tags", () => {

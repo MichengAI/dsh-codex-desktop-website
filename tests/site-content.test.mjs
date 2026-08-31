@@ -5,6 +5,24 @@ import test from "node:test";
 const appSource = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
 const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const faviconSource = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8");
+const releasesSource = readFileSync(new URL("../src/releases.js", import.meta.url), "utf8");
+
+test("highlights official DSH alpha.2 support before the hero", () => {
+  const supportBanner = appSource.indexOf('className="official-support"');
+  const hero = appSource.indexOf('<section className="hero page-width"');
+
+  assert.ok(supportBanner >= 0);
+  assert.ok(supportBanner < hero);
+  assert.match(appSource, /已支持官方最新版本/);
+  assert.match(appSource, /DeepSeek Harness 0\.1\.2-alpha\.2/);
+  assert.match(indexSource, /已支持官方最新版 DeepSeek Harness 0\.1\.2-alpha\.2/);
+});
+
+test("lists desktop v1.0.40 as the latest release", () => {
+  assert.match(releasesSource, /version: "v1\.0\.40"/);
+  assert.match(releasesSource, /releases\/tag\/v1\.0\.40/);
+  assert.ok(releasesSource.indexOf('version: "v1.0.40"') < releasesSource.indexOf('version: "v1.0.39"'));
+});
 
 test("shows nine bundled component cards before the five-release changelog", () => {
   const pluginData = appSource.match(/const plugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";

@@ -1,5 +1,22 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.40",
+    date: "2026-08-31",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.40",
+    zh: [
+      "将内置官方 DSH 运行时及其启动依赖升级到 0.1.2-alpha.2，适配启动 Token 鉴权与 alpha.2 所需的原生安装脚本。",
+      "将内置生态组件更新到 IM Connect 0.1.27、Skills Manager 0.1.32、Archive Manager 0.1.21、Agency Agents 0.1.23、dsh-context 0.38.5、DSH Better Sidebar 0.18.0-alpha.0、MCP Connector 0.2.31 和 dshmarket 1.38.1。",
+      "将 electron-builder 升级到 26.15.7，并刷新供全新安装和缺包自修复使用的离线运行时与插件仓库装配流程。",
+      "让 Windows、macOS 与 Linux 打包应用冒烟测试适配 alpha.2 鉴权：在隔离 Profile 中校验预期的未鉴权响应、进程存活、启动诊断以及主窗口创建后的就绪标记。",
+    ],
+    en: [
+      "Upgraded the bundled official DSH runtime and its launch peers to 0.1.2-alpha.2, including authenticated startup-token handling and the alpha.2 native-script requirements.",
+      "Updated the bundled ecosystem to IM Connect 0.1.27, Skills Manager 0.1.32, Archive Manager 0.1.21, Agency Agents 0.1.23, dsh-context 0.38.5, DSH Better Sidebar 0.18.0-alpha.0, MCP Connector 0.2.31, and dshmarket 1.38.1.",
+      "Upgraded electron-builder to 26.15.7 and refreshed the offline runtime and plugin-store assembly for fresh installs and missing-package repair.",
+      "Aligned Windows, macOS, and Linux packaged-app smoke tests with alpha.2 authentication by verifying the expected unauthenticated response, process liveness, startup diagnostics, and the post-window ready marker in isolated profiles.",
+    ],
+  },
+  {
     version: "v1.0.39",
     date: "2026-08-30",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.39",
