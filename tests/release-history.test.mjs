@@ -5,8 +5,10 @@ import { recentDesktopReleases } from "../src/releases.js";
 
 test("publishes exactly the latest five desktop releases", () => {
   assert.equal(recentDesktopReleases.length, 5);
-  assert.equal(recentDesktopReleases[0].version, "v1.0.40");
-  assert.equal(recentDesktopReleases.at(-1).version, "v1.0.36");
+  assert.deepEqual(
+    recentDesktopReleases.map((release) => release.version),
+    ["v1.0.46", "v1.0.45", "v1.0.43", "v1.0.41", "v1.0.40"],
+  );
 });
 
 test("keeps release entries bilingual, ordered, and linked to their tags", () => {
@@ -20,7 +22,7 @@ test("keeps release entries bilingual, ordered, and linked to their tags", () =>
     if (index > 0) {
       const previous = Number(recentDesktopReleases[index - 1].version.split(".").at(-1));
       const current = Number(release.version.split(".").at(-1));
-      assert.equal(previous - current, 1);
+      assert.ok(previous > current);
     }
   }
 });

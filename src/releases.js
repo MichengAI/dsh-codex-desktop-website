@@ -1,5 +1,67 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.46",
+    date: "2026-09-04",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.46",
+    zh: [
+      "修复 Windows 任务栏未读完成角标：打开已完成任务后会稳定清除未读状态，后续任务列表刷新不再把历史完成任务重复计入。",
+    ],
+    en: [
+      "Fixed the Windows taskbar unread-completion badge so opening completed tasks clears them permanently; later session-list refreshes no longer count historical completed rows again.",
+    ],
+  },
+  {
+    version: "v1.0.45",
+    date: "2026-09-04",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.45",
+    zh: [
+      "新增插件恢复模式：启动失败后隔离第三方插件，并提供独立恢复页，支持恢复、卸载或回到最近正常配置。",
+      "没有仍需隔离的插件时自动退出恢复模式；恢复会话中的健康启动不再覆盖最近一次已验证的配置检查点。",
+      "修复 Windows 关闭关于、设置或快捷键窗口时主窗口闪一下的问题。",
+      "将内置插件更新到 Codex UI 0.2.102、IM Connect 0.1.34、Automation 0.1.27、Skills Manager 0.1.38、Archive Manager 0.1.29、Agency Agents 0.1.30、dsh-context 0.41.2、DSH Better Sidebar 0.18.0 和 dshmarket 1.41.0。",
+      "稳住运行时解压超时测试：先挂上拒绝断言，再等孙进程 PID，避免 macOS Intel CI 在 200ms 内输掉竞态。本版取代未发布的 v1.0.44 标签。",
+    ],
+    en: [
+      "Added plugin recovery mode: after a failed start the desktop isolates third-party plugins and opens a dedicated page to restore, uninstall, or return to the last healthy configuration.",
+      "Recovery now exits automatically when no plugins remain isolated, and a healthy recovery boot no longer overwrites the last verified configuration checkpoint.",
+      "Fixed a Windows flash when closing the About, Settings, or Shortcuts windows.",
+      "Updated bundled plugins to Codex UI 0.2.102, IM Connect 0.1.34, Automation 0.1.27, Skills Manager 0.1.38, Archive Manager 0.1.29, Agency Agents 0.1.30, dsh-context 0.41.2, DSH Better Sidebar 0.18.0, and dshmarket 1.41.0.",
+      "Stabilized the runtime-extraction timeout test so macOS Intel CI no longer races a 200ms deadline before the hanging child writes its PID. This supersedes the unreleased v1.0.44 tag.",
+    ],
+  },
+  {
+    version: "v1.0.43",
+    date: "2026-09-01",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.43",
+    zh: [
+      "将内置官方 DSH 运行时及其启动依赖升级到 0.1.2-alpha.3。",
+      "将内置生态组件更新到 Codex UI 0.2.97、IM Connect 0.1.30、Archive Manager 0.1.22 和 MCP Connector 0.2.32。",
+      "强化离线运行时初始化：Windows 冒烟复用共享插件校验器，鉴权与未鉴权路径都等待桌面就绪标记，并在取消或超时解压时清理完整进程树。",
+    ],
+    en: [
+      "Upgraded the bundled official DSH runtime and its launch peers to 0.1.2-alpha.3.",
+      "Updated the bundled ecosystem to Codex UI 0.2.97, IM Connect 0.1.30, Archive Manager 0.1.22, and MCP Connector 0.2.32.",
+      "Hardened offline runtime initialization by sharing the bundled-plugin verifier across Windows smoke tests, waiting for the desktop ready marker on both HTTP paths, and cleaning the full extraction process tree when initialization is cancelled or times out.",
+    ],
+  },
+  {
+    version: "v1.0.41",
+    date: "2026-08-31",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.41",
+    zh: [
+      "修复离线包缺少官方 DSH 启动所需 peer 依赖的问题，确保随包运行时无需联网即可完整启动。",
+      "将便携版首次运行时的校验、解压和大量文件复制移入独立子进程，并展示分阶段进度，避免初始化期间窗口长时间未响应。",
+      "将运行时与插件仓库的解压完成标记绑定到随包归档 SHA256；覆盖升级或复用旧便携目录时，空标记和陈旧标记会自动触发重新解压，离线首启不再缺少插件。",
+      "将 Windows、macOS 与 Linux 打包冒烟测试统一为强制离线，并在隔离 Profile 中核对全部十个随包插件及其固定版本。",
+    ],
+    en: [
+      "Fixed the offline bundle so it includes every peer required to launch the official DSH runtime without network access.",
+      "Moved portable first-run verification, extraction, and bulk file copying into a separate child process with staged progress, preventing the window from becoming unresponsive during initialization.",
+      "Bound runtime and plugin-store completion markers to the bundled archive SHA256. Empty or stale markers from overwritten or reused portable directories now trigger re-extraction, so offline first launch no longer starts without plugins.",
+      "Made Windows, macOS, and Linux packaged-app smoke tests force offline mode and verify all ten bundled plugins and their pinned versions in an isolated profile.",
+    ],
+  },
+  {
     version: "v1.0.40",
     date: "2026-08-31",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.40",
