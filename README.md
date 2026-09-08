@@ -1,6 +1,6 @@
 # DSH Codex Desktop Website
 
-[中文](README.zh-CN.md)
+[中文](README.zh-CN.md) · [Changelog](CHANGELOG.md)
 
 This repository contains the website source for [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop). The site introduces the project and links to installers for Windows, macOS, and Linux.
 
@@ -35,8 +35,6 @@ For a ready-to-use workbench, download [DSH Codex Desktop](https://github.com/Mi
 | [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) | Choose and summon specialists for your task |
 | [BTW](https://github.com/MichengAI/dsh-btw) | Ask side questions without interrupting the main task |
 | [Simplify](https://github.com/MichengAI/dsh-simplify) | Use /simplify to improve code within your Git changes |
-
-The desktop introduction and download site is maintained in the [website repository](https://github.com/MichengAI/dsh-codex-desktop-website).
 
 ## Local development
 
@@ -87,7 +85,3 @@ scripts\             Build helpers
 tests\               Worker and build configuration tests
 wrangler.jsonc       Cloudflare Workers configuration
 ```
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for the five most recent development snapshots.

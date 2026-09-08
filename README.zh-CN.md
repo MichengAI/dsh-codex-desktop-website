@@ -1,6 +1,6 @@
 # DSH Codex Desktop 官网
 
-[English](README.md)
+[English](README.md) · [更新日志](CHANGELOG.zh-CN.md)
 
 这是 [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop) 的官网源码。网站展示项目说明，并提供 Windows、macOS 和 Linux 的安装包下载。
 
@@ -35,8 +35,6 @@
 | [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) | 按任务选择并召唤专业角色 |
 | [BTW](https://github.com/MichengAI/dsh-btw) | 在当前上下文中临时旁问，不打断主任务 |
 | [Simplify](https://github.com/MichengAI/dsh-simplify) | 用 /simplify 整理 Git 改动范围内的代码 |
-
-桌面端介绍与下载站的源码见[官网仓库](https://github.com/MichengAI/dsh-codex-desktop-website)。
 
 ## 本地开发
 
@@ -87,7 +85,3 @@ scripts\             构建辅助脚本
 tests\               Worker 与构建配置测试
 wrangler.jsonc       Cloudflare Workers 配置
 ```
-
-## 更新日志
-
-最近五个开发快照见 [CHANGELOG.zh-CN.md](CHANGELOG.zh-CN.md)。
