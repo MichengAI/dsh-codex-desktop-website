@@ -4,14 +4,14 @@ import { recentDesktopReleases } from "./releases.js";
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
 const releaseUrl = `${desktopRepositoryUrl}/releases/latest`;
-const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.46`;
+const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.49`;
 
 
 const translations = {
   "页面导航": "Page navigation", "桌面端": "Desktop", "下载": "Downloads", "更新日志": "Changelog", "插件": "Plugins",
   "切换至暗色模式": "Switch to dark mode", "切换至亮色模式": "Switch to light mode", "切换至英文": "Switch to English", "切换至中文": "Switch to Chinese",
   "Codex UI 以及": "Codex UI and", "常用内置插件。": "everyday built-in plugins.",
-  "DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、上下文管理和增强侧边栏带到桌面端。": "DSH Codex Desktop brings Codex UI, expert presets, skill management, conversation archives, IM Connect, automation, context management, and an enhanced sidebar to the desktop.",
+  "DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、上下文管理、MCP 连接、用量统计和增强侧边栏带到桌面端。": "DSH Codex Desktop brings Codex UI, expert presets, skill management, conversation archives, IM Connect, automation, context management, MCP connections, usage billing, and an enhanced sidebar to the desktop.",
   "下载桌面端": "Download desktop app", "查看随附组件": "View bundled plugins", "支持系统": "Platforms", "运行方式": "Runtime", "本机服务": "Local service", "更新入口": "Updates",
   "DSH Codex Desktop 产品总览": "DSH Codex Desktop product overview", "放大查看 DSH Codex Desktop 产品总览": "Open DSH Codex Desktop product overview", "Codex UI 以及常用内置插件": "Codex UI and everyday built-in plugins",
   "内置本地运行环境": "Built-in local runtime", "用户数据保留在本机": "User data stays local", "插件可独立更新": "Plugins update independently", "通过 Releases 获取新版本": "New versions via Releases",
@@ -35,6 +35,8 @@ const translations = {
   "以下内容整理自 GitHub Releases，按发布时间从新到旧排列。": "Compiled from GitHub Releases and ordered from newest to oldest.",
   "组件": "PLUGINS", "随附插件": "Bundled plugins", "常用内置插件，": "Everyday built-in plugins", "覆盖常见工作环节。": "for everyday work.",
   "这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。": "These components are prepared in the DSH profile on first launch. Each has its own repository, version, and update path; plugin updates do not overwrite the desktop runtime.",
+  "自制插件": "First-party plugins", "由 MichengAI 维护，随 Desktop 同步演进。": "Maintained by MichengAI and updated alongside Desktop.",
+  "社区插件": "Community plugins", "由社区维护，作为桌面端的集成生态组件随包提供。": "Community-maintained ecosystem components bundled with Desktop.",
   "提供项目、任务与会话工作区，把日常 Agent 协作收进一个桌面界面。": "A desktop workspace for projects, tasks, and conversations.",
   "按任务启用代码审查、架构、前端、后端与运维等专家预设。": "Task-specific presets for code review, architecture, frontend, backend, and operations.",
   "查看、启用、停用与管理本地及共享的 Agent 技能。": "Browse, enable, disable, and manage local or shared Agent skills.",
@@ -43,6 +45,10 @@ const translations = {
   "用内置定时能力管理周期任务，在同一工作台持续运行。": "Run recurring tasks from the same workbench with built-in scheduling.",
   "查看上下文构成、使用情况与演进，帮助判断何时需要整理或压缩。": "Inspect context composition, usage, and evolution to decide when cleanup or compaction is needed.",
   "提供类似 VS Code 的文件、编辑器、终端、Git 与浏览器侧边栏。": "Adds a VS Code-like sidebar for files, editing, terminals, Git, and browsing.",
+  "通过 OAuth、API Key、HTTP、stdio 或 JSON 配置添加并管理 MCP 服务。": "Add and manage MCP services with OAuth, API keys, HTTP, stdio, or JSON configuration.",
+  "汇总模型用量与费用，提供面向工作台的计费看板。": "Aggregate model usage and costs in a billing dashboard for the workbench.",
+  "在当前会话中发起一次性只读旁问，不打断主任务。": "Ask a one-off, read-only side question within the current session without interrupting the main task.",
+  "限定 Git 变更范围，帮助当前 Agent 在保持功能的前提下简化代码。": "Scope work to Git changes so the current Agent can simplify code while preserving behavior.",
   "插件市场": "PLUGIN MARKET", "从 dshmarket 管理更多插件。": "Manage more plugins with dshmarket.", "随桌面端提供，用于发现、安装、更新、启用和诊断其他 DSH 插件。": "Comes with the desktop app for discovering, installing, updating, enabling, and diagnosing other DSH plugins.",
   "从 Releases 下载，": "Download from Releases,", "安装后打开应用。": "then open the app.", "打开最新发布页": "Open latest release", "查看桌面端仓库": "View desktop repository",
   "DSH Codex Desktop 是由 Codex UI 与功能插件集合构成的社区工作台，基于 DeepSeek Harness 运行时与插件能力构建，并非 DeepSeek AI 官方产品。": "DSH Codex Desktop is a community workbench built from Codex UI and functional plugins, using the DeepSeek Harness runtime and plugin capabilities. It is not an official DeepSeek AI product.",
@@ -86,15 +92,21 @@ const downloads = [
   ["Linux", "x64 · 通用发行版", ".AppImage", "下载 AppImage"],
 ];
 
-const plugins = [
+const firstPartyPlugins = [
   ["dsh-codex-ui", "@michengai/dsh-codex-ui", "主界面", "提供项目、任务与会话工作区，把日常 Agent 协作收进一个桌面界面。", "https://github.com/MichengAI/dsh-codex-ui"],
   ["dsh-agency-agents", "@michengai/dsh-agency-agents", "专家预设", "按任务启用代码审查、架构、前端、后端与运维等专家预设。", "https://github.com/MichengAI/dsh-agency-agents"],
   ["dsh-skills-manager", "@michengai/dsh-skills-manager", "技能管理", "查看、启用、停用与管理本地及共享的 Agent 技能。", "https://github.com/MichengAI/dsh-skills-manager"],
   ["dsh-archive-manager", "@michengai/dsh-archive-manager", "会话归档", "检索、恢复或清理已归档会话，让历史上下文持续可用。", "https://github.com/MichengAI/dsh-archive-manager"],
   ["dsh-im-connect", "@michengai/dsh-im-connect", "消息连接", "集中配置钉钉、飞书、Lark、微信、企业微信、QQ 与 Telegram 等可用频道。", "https://github.com/MichengAI/dsh-im-connect"],
   ["dsh-automation", "@michengai/dsh-automation", "自动化任务", "用内置定时能力管理周期任务，在同一工作台持续运行。", "https://github.com/MichengAI/dsh-automation"],
+  ["dsh-btw", "@michengai/dsh-btw", "只读旁问", "在当前会话中发起一次性只读旁问，不打断主任务。", "https://github.com/MichengAI/dsh-btw"],
+  ["dsh-simplify", "@michengai/dsh-simplify", "代码简化", "限定 Git 变更范围，帮助当前 Agent 在保持功能的前提下简化代码。", "https://github.com/MichengAI/dsh-simplify"],
+];
+const communityPlugins = [
   ["dsh-context", "dsh-context", "上下文管理", "查看上下文构成、使用情况与演进，帮助判断何时需要整理或压缩。", "https://github.com/bowenliang123/dsh-context"],
   ["dsh-better-sidebar", "dsh-better-sidebar", "增强侧边栏", "提供类似 VS Code 的文件、编辑器、终端、Git 与浏览器侧边栏。", "https://github.com/omdsh-dev/DSH-better-sidebar"],
+  ["dsh-mcp-connector", "dsh-mcp-connector", "MCP 连接", "通过 OAuth、API Key、HTTP、stdio 或 JSON 配置添加并管理 MCP 服务。", "https://github.com/duhu2000/dsh-mcp-connector"],
+  ["dsh-ui-usage-billing", "@kenz1117/dsh-ui-usage-billing", "用量统计", "汇总模型用量与费用，提供面向工作台的计费看板。", "https://github.com/kenz1117/dsh-ui-usage-billing"],
 ];
 const pluginLabelTranslations = {
   "主界面": "MAIN INTERFACE",
@@ -105,11 +117,18 @@ const pluginLabelTranslations = {
   "自动化任务": "AUTOMATION",
   "上下文管理": "CONTEXT MANAGEMENT",
   "增强侧边栏": "ENHANCED SIDEBAR",
+  "MCP 连接": "MCP CONNECTIONS",
+  "用量统计": "USAGE BILLING",
+  "只读旁问": "READ-ONLY SIDE QUESTIONS",
+  "代码简化": "CODE SIMPLIFICATION",
   "插件市场": "PLUGIN MARKET",
 };
 
 function Arrow() { return <span className="arrow" aria-hidden="true">↗</span>; }
 function Kicker({ number, children }) { return <div className="kicker"><span>{number}</span><p>{children}</p></div>; }
+function PluginCards({ plugins, locale }) {
+  return plugins.map(([name, packageName, label, description, href]) => <a className="plugin" key={packageName} href={href} target="_blank" rel="noreferrer"><div><small data-no-translate>{locale === "zh" ? label : pluginLabelTranslations[label]}</small><Arrow /></div><h3>{name}</h3><p>{description}</p><code>{packageName}</code></a>);
+}
 
 export function App() {
   const [activeScreenshot, setActiveScreenshot] = useState(null);
@@ -154,14 +173,14 @@ export function App() {
         <span className="page-width">
           <strong><i aria-hidden="true" />{locale === "zh" ? "已支持最新 DSH 官方版本" : "SUPPORTS THE LATEST OFFICIAL DSH RELEASE"}</strong>
           <span>DeepSeek Harness 0.1.2-rc.1</span>
-          <b>{locale === "zh" ? "查看 v1.0.46" : "View v1.0.46"}<Arrow /></b>
+          <b>{locale === "zh" ? "查看 v1.0.49" : "View v1.0.49"}<Arrow /></b>
         </span>
       </a>
       <section className="hero page-width" aria-labelledby="hero-title">
         <div>
           <p className="eyebrow"><i />DSH CODEX DESKTOP</p>
           <h1 id="hero-title">Codex UI 以及<br /><em>常用内置插件。</em></h1>
-          <p className="lead">DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、上下文管理和增强侧边栏带到桌面端。</p>
+          <p className="lead">DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、上下文管理、MCP 连接、用量统计和增强侧边栏带到桌面端。</p>
           <div className="actions"><a className="button primary" href={releaseUrl} target="_blank" rel="noreferrer">下载桌面端<Arrow /></a><a className="button ghost" href="#plugins">查看随附组件</a></div>
           <div className="hero-meta"><span><b>支持系统</b> Windows / macOS / Linux</span><span><b>运行方式</b> 本机服务</span><span><b>更新入口</b> GitHub Releases</span></div>
         </div>
@@ -175,7 +194,7 @@ export function App() {
         <style>{`.screenshot-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:45px}.screenshot-gallery figure{min-width:0;margin:0;overflow:hidden;border:1px solid rgb(145 190 220 / 22%);border-radius:10px;background:#0b1b2b}.screenshot-gallery .screenshot-wide{grid-column:span 2}.screenshot-gallery img{display:block;width:100%;aspect-ratio:1.58;object-fit:cover;object-position:top;transition:transform .25s ease}.screenshot-gallery figure:hover img{transform:scale(1.025)}.screenshot-gallery figcaption{padding:13px 14px 15px}.screenshot-gallery figcaption b,.screenshot-gallery figcaption span{display:block}.screenshot-gallery figcaption b{margin-bottom:5px;font-size:13px}.screenshot-gallery figcaption span{color:#8fa9bd;font-size:11px;line-height:1.5}@media(max-width:930px){.screenshot-gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.screenshot-gallery{grid-template-columns:1fr;margin-top:28px}.screenshot-gallery .screenshot-wide{grid-column:auto}}`}</style>
       </section>
       <section className="downloads" id="downloads" aria-labelledby="downloads-title"><div className="page-width"><Kicker number="安装">当前发布版本</Kicker><div className="intro"><h2 id="downloads-title">选择系统和架构。</h2><p>GitHub Releases 保留各平台的最新安装包与历史版本。请选择与设备相符的安装包类型。</p></div><div className="download-grid">{downloads.map(([system, arch, type, label]) => <a className="download-card" key={`${system}-${arch}`} href={releaseUrl} target="_blank" rel="noreferrer"><small>{system}</small><h3>{arch}</h3><p>{type}</p><b>{label}<Arrow /></b></a>)}</div><p className="release-note"><b>注意</b><span>macOS 当前发布包尚未签名与公证，系统可能显示来源提示。完整发布记录与其他资产见 <a href={releaseUrl} target="_blank" rel="noreferrer">GitHub Releases <Arrow /></a>{locale === "zh" ? "。" : "."}</span></p></div></section>
-      <section className="plugins page-width" id="plugins" aria-labelledby="plugins-title"><div className="intro plugin-intro"><div><Kicker number="组件">随附插件</Kicker><h2 id="plugins-title">常用内置插件，<br />覆盖常见工作环节。</h2></div><p>这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。</p></div><div className="plugin-grid">{plugins.map(([name, packageName, label, description, href]) => <a className="plugin" key={packageName} href={href} target="_blank" rel="noreferrer"><div><small data-no-translate>{locale === "zh" ? label : pluginLabelTranslations[label]}</small><Arrow /></div><h3>{name}</h3><p>{description}</p><code>{packageName}</code></a>)}<a className="plugin plugin-market" href="https://dshmarket.com" target="_blank" rel="noreferrer"><div><small data-no-translate>{locale === "zh" ? "插件市场" : pluginLabelTranslations["插件市场"]}</small><Arrow /></div><h3>dshmarket</h3><p>随桌面端提供，用于发现、安装、更新、启用和诊断其他 DSH 插件。</p><code>dshmarket</code></a></div></section>
+      <section className="plugins page-width" id="plugins" aria-labelledby="plugins-title"><div className="intro plugin-intro"><div><Kicker number="组件">随附插件</Kicker><h2 id="plugins-title">常用内置插件，<br />覆盖常见工作环节。</h2></div><p>这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。</p></div><div className="plugin-groups"><div className="plugin-group"><div className="plugin-group-heading"><h3>自制插件</h3><p>由 MichengAI 维护，随 Desktop 同步演进。</p></div><div className="plugin-grid"><PluginCards plugins={firstPartyPlugins} locale={locale} /></div></div><div className="plugin-group"><div className="plugin-group-heading"><h3>社区插件</h3><p>由社区维护，作为桌面端的集成生态组件随包提供。</p></div><div className="plugin-grid"><PluginCards plugins={communityPlugins} locale={locale} /></div></div></div><div className="plugin-market-row"><a className="plugin plugin-market" href="https://dshmarket.com" target="_blank" rel="noreferrer"><div><small data-no-translate>{locale === "zh" ? "插件市场" : pluginLabelTranslations["插件市场"]}</small><Arrow /></div><h3>dshmarket</h3><p>随桌面端提供，用于发现、安装、更新、启用和诊断其他 DSH 插件。</p><code>dshmarket</code></a></div></section>
       <section className="changelog page-width" id="changelog" aria-labelledby="changelog-title">
         <div className="intro changelog-intro"><div><Kicker number="版本">最近 5 个版本</Kicker><h2 id="changelog-title">跟进桌面端的每一次更新。</h2></div><p>以下内容整理自 GitHub Releases，按发布时间从新到旧排列。</p></div>
         <ol className="release-list" data-no-translate>

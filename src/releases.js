@@ -1,5 +1,58 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.49",
+    date: "2026-09-07",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.49",
+    zh: [
+      "启动时清理旧版 Desktop bridge 残留的依赖声明和包文件；清理失败会记录警告并在下次启动重试，不阻断工作台启动。",
+      "修复旧 profile 仅在加载列表登记内置插件时跳过补装的问题，补装改为检查 dependencies 中的安装声明。",
+      "兼容 pnpm 11 的 .modules.yaml JSON 状态，离线安装回退到在线安装时保留原 store，避免 ERR_PNPM_UNEXPECTED_STORE。",
+      "离线冒烟测试同步校验插件文件、依赖登记和 bundle 激活状态。",
+    ],
+    en: [
+      "Clean legacy Desktop bridge dependency declarations and package files at startup; cleanup warnings retry on the next launch without blocking the workbench.",
+      "Fixed upgraded profiles that listed bundled plugins only in the bundle list by checking installation declarations in dependencies before seeding.",
+      "Preserved the pnpm 11 store from .modules.yaml when offline installation retries online, preventing ERR_PNPM_UNEXPECTED_STORE.",
+      "Offline smoke tests now verify plugin files, dependency declarations, and bundle activation together.",
+    ],
+  },
+  {
+    version: "v1.0.48",
+    date: "2026-09-07",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.48",
+    zh: [
+      "Desktop 启动 DSH 时从应用私有目录动态注入桌面桥接；独立 dsh web 使用 Web 插件管理通道，旧版桥接配置会迁移并备份。",
+      "更新提示遵循更新库的可用性判断，避免将旧版或暂不可用的版本提示为新版本。",
+      "离线资源加入 pnpm 包版本元数据，确保空用户缓存下的首次安装可用，并保留首次安装错误及超时输出供诊断。",
+      "新增 Usage Billing 1.0.31、BTW 0.1.3 与 Simplify 0.1.2，内置组件扩充为 13 项。",
+      "更新 Codex UI 至 0.2.106、Automation 至 0.1.32、dsh-context 至 0.44.0、MCP Connector 至 0.2.37。",
+    ],
+    en: [
+      "Desktop now injects its bridge from a private application directory, while standalone dsh web uses Web plugin management and migrates legacy bridge configuration with a backup.",
+      "Update prompts now respect the updater availability decision, avoiding false offers for older or currently unavailable releases.",
+      "Offline resources include pnpm package metadata for first launch with an empty user cache and retain initial install errors and timeout output for diagnosis.",
+      "Bundled Usage Billing 1.0.31, BTW 0.1.3, and Simplify 0.1.2, expanding the bundled component catalog to 13 entries.",
+      "Updated Codex UI to 0.2.106, Automation to 0.1.32, dsh-context to 0.44.0, and MCP Connector to 0.2.37.",
+    ],
+  },
+  {
+    version: "v1.0.47",
+    date: "2026-09-06",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.47",
+    zh: [
+      "将插件安装错误与 DSH 启动分离：安装失败后仍尝试加载工作台。",
+      "恢复模式只定位与加载失败相关的插件，并在确认隔离前展示候选列表；无关插件继续启用。",
+      "修复非关键插件失败时将可用工作台强制切到恢复页的问题；恢复后的插件需通过完整健康检查才会清除备份。",
+      "内置组件更新到 Codex UI 0.2.103、Automation 0.1.31、Skills Manager 0.1.40、Archive Manager 0.1.30、Agency Agents 0.1.32、dsh-context 0.43.0、MCP Connector 0.2.35 与 dshmarket 1.44.0。",
+    ],
+    en: [
+      "Plugin installation errors are now separate from DSH startup, so the desktop still attempts to load the workbench after a failed installation.",
+      "Recovery identifies only plugins related to a loading failure and shows candidates before isolation; unrelated plugins remain enabled.",
+      "Fixed noncritical plugin errors forcing a usable workbench into recovery; restored plugins must pass a full health check before backups clear.",
+      "Updated Codex UI to 0.2.103, Automation to 0.1.31, Skills Manager to 0.1.40, Archive Manager to 0.1.30, Agency Agents to 0.1.32, dsh-context to 0.43.0, MCP Connector to 0.2.35, and dshmarket to 1.44.0.",
+    ],
+  },
+  {
     version: "v1.0.46",
     date: "2026-09-04",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.46",
