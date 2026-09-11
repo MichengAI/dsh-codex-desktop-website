@@ -11,3 +11,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* 原图尺寸用于预留比例，展示高度随容器宽度缩放。 */
+.hero-product img {
+  height: auto;
+}
