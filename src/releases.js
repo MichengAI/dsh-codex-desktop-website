@@ -1,5 +1,48 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.52",
+    date: "2026-09-11",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.52",
+    zh: [
+      "内置 DSH 升级至 0.1.5-rc.2，同步更新 14 个内置插件，插件市场保持 1.45.1。",
+      "适配新版 DSH 启动方式，确保桌面端正常打开工作区。",
+      "新版使用 Session V3 会话格式。升级前请备份重要会话；新版写入的会话不能直接交给旧版读取。",
+    ],
+    en: [
+      "Upgraded bundled DSH to 0.1.5-rc.2 and updated 14 bundled plugins; the plugin market remains on 1.45.1.",
+      "Adapted to the new DSH startup entry so the desktop app can open the workspace correctly.",
+      "The new version uses Session V3. Back up important conversations before upgrading; conversations written by the new version cannot be read directly by older versions.",
+    ],
+  },
+  {
+    version: "v1.0.51",
+    date: "2026-09-09",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.51",
+    zh: [
+      "新增桌面宠物与 Git Graph：查看多会话提醒、处理工具审批和问题回答，并通过图形浏览 Git 提交与分支。",
+      "改善宠物显示恢复与回答校验，修复多次启动后可能出现的页面加载失败和 HTTP 431 错误。",
+      "Windows 11 22H2 及以上支持随主题切换的 Mica 背景；更新内置插件并补充功能截图。",
+    ],
+    en: [
+      "Added a desktop pet and Git Graph: view multi-conversation notifications, respond to tool approvals and questions, and explore Git commits and branches visually.",
+      "Improved pet display recovery and answer validation, and fixed page loading failures and HTTP 431 errors after repeated launches.",
+      "Added theme-aware Mica backgrounds on Windows 11 22H2 and later, updated bundled plugins, and expanded feature screenshots.",
+    ],
+  },
+  {
+    version: "v1.0.50",
+    date: "2026-09-08",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.50",
+    zh: [
+      "更新工作区、IM、定时任务、技能、归档、专家、旁问、上下文、MCP、用量统计和插件市场等内置组件。",
+      "任务栏未读数量不再计入子代理会话，已有未读记录和后续补齐来源信息的会话也会正确过滤。",
+    ],
+    en: [
+      "Updated bundled components for the workspace, messaging, automation, skills, archives, experts, side questions, context, MCP, usage statistics, and plugin market.",
+      "Excluded subagent conversations from taskbar unread counts, including existing unread entries and conversations whose origin becomes available later.",
+    ],
+  },
+  {
     version: "v1.0.49",
     date: "2026-09-07",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.49",

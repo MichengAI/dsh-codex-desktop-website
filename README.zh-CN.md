@@ -6,6 +6,8 @@
 
 下载最新版请前往[桌面应用发布页](https://github.com/MichengAI/dsh-codex-desktop/releases)。
 
+当前桌面端版本为 **v1.0.52**，内置 **DSH 0.1.5-rc.2** 和 **15 个组件（含插件市场）**。新版使用 Session V3；升级前请备份重要会话，新版写入的会话不能直接由旧版读取。
+
 ## 获取桌面应用
 
 1. 打开桌面应用发布页，选择与你的系统和 CPU 架构对应的安装包。
@@ -23,7 +25,7 @@
 
 ## DSH 产品生态
 
-想直接使用完整工作台，可下载 [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop/releases)；已有 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 环境，可按需独立安装以下 8 个自研插件。桌面端已随附这些插件。
+想直接使用完整工作台，可下载 [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop/releases)；已有 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 环境，可按需独立安装以下 9 个自研插件。桌面端已随附这些插件。
 
 | 插件 | 你可以用它做什么 |
 | --- | --- |
@@ -33,6 +35,7 @@
 | [Skills Manager](https://github.com/MichengAI/dsh-skills-manager) | 统一查找、启停、创建和导入本机技能 |
 | [Archive Manager](https://github.com/MichengAI/dsh-archive-manager) | 搜索、恢复或清理已归档会话 |
 | [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) | 按任务选择并召唤专业角色 |
+| [Codex Pet](https://github.com/MichengAI/dsh-codex-pet) | 通过桌面宠物查看会话提醒、处理工具审批和问题回答 |
 | [BTW](https://github.com/MichengAI/dsh-btw) | 在当前上下文中临时旁问，不打断主任务 |
 | [Simplify](https://github.com/MichengAI/dsh-simplify) | 用 /simplify 整理 Git 改动范围内的代码 |
 

@@ -6,6 +6,8 @@ This repository contains the website source for [DSH Codex Desktop](https://gith
 
 Download the latest version from the [desktop app releases](https://github.com/MichengAI/dsh-codex-desktop/releases).
 
+The current desktop release is **v1.0.52**, bundling **DSH 0.1.5-rc.2** and **15 components (including the plugin market)**. This version uses Session V3. Back up important conversations before upgrading; conversations written by the new version cannot be read directly by older versions.
+
 ## Get the desktop app
 
 1. Open the desktop releases page and choose the installer for your operating system and CPU architecture.
@@ -23,7 +25,7 @@ This repository maintains the introduction and download website. You do not need
 
 ## DSH product ecosystem
 
-For a ready-to-use workbench, download [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop/releases). If you already use [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), install any of these eight plugins individually. The desktop app includes all eight.
+For a ready-to-use workbench, download [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop/releases). If you already use [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), install any of these nine plugins individually. The desktop app includes all nine.
 
 | Plugin | What you can do |
 | --- | --- |
@@ -33,6 +35,7 @@ For a ready-to-use workbench, download [DSH Codex Desktop](https://github.com/Mi
 | [Skills Manager](https://github.com/MichengAI/dsh-skills-manager) | Find, enable, create, and import local skills |
 | [Archive Manager](https://github.com/MichengAI/dsh-archive-manager) | Search, restore, or clean up archived conversations |
 | [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) | Choose and summon specialists for your task |
+| [Codex Pet](https://github.com/MichengAI/dsh-codex-pet) | View conversation notifications and respond to tool approvals and questions through a desktop pet |
 | [BTW](https://github.com/MichengAI/dsh-btw) | Ask side questions without interrupting the main task |
 | [Simplify](https://github.com/MichengAI/dsh-simplify) | Use /simplify to improve code within your Git changes |
 

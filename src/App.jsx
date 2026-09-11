@@ -4,10 +4,12 @@ import { recentDesktopReleases } from "./releases.js";
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
 const releaseUrl = `${desktopRepositoryUrl}/releases/latest`;
-const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.49`;
+const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.52`;
 
 
 const translations = {
+  "选择桌面宠物，查看会话提醒并直接处理工具审批和问题回答。": "Choose a desktop pet, view conversation notifications, and respond to tool approvals and questions directly.",
+  "通过图形浏览 Git 提交历史与分支关系。": "Explore Git commit history and branch relationships visually.",
   "页面导航": "Page navigation", "桌面端": "Desktop", "下载": "Downloads", "更新日志": "Changelog", "插件": "Plugins",
   "切换至暗色模式": "Switch to dark mode", "切换至亮色模式": "Switch to light mode", "切换至英文": "Switch to English", "切换至中文": "Switch to Chinese",
   "Codex UI 以及": "Codex UI and", "常用内置插件。": "everyday built-in plugins.",
@@ -32,7 +34,7 @@ const translations = {
   ".exe 安装器": ".exe installer", ".dmg 磁盘映像": ".dmg disk image", ".deb 软件包": ".deb package", "下载 Windows": "Download for Windows", "下载 Apple Silicon": "Download for Apple Silicon", "下载 Intel Mac": "Download for Intel Mac", "下载 Linux .deb": "Download Linux .deb", "下载 AppImage": "Download AppImage",
   "注意": "Note", "macOS 当前发布包尚未签名与公证，系统可能显示来源提示。完整发布记录与其他资产见": "Current macOS packages are not yet signed or notarized, so the system may show a source warning. Find release notes and other assets on",
   "版本": "RELEASES", "最近 5 个版本": "Latest 5 releases", "跟进桌面端的每一次更新。": "Follow every recent desktop update.",
-  "以下内容整理自 GitHub Releases，按发布时间从新到旧排列。": "Compiled from GitHub Releases and ordered from newest to oldest.",
+  "以下内容整理自 GitHub Releases，按版本号从新到旧排列。": "Compiled from GitHub Releases and ordered by version from newest to oldest.",
   "组件": "PLUGINS", "随附插件": "Bundled plugins", "常用内置插件，": "Everyday built-in plugins", "覆盖常见工作环节。": "for everyday work.",
   "这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。": "These components are prepared in the DSH profile on first launch. Each has its own repository, version, and update path; plugin updates do not overwrite the desktop runtime.",
   "自制插件": "First-party plugins", "由 MichengAI 维护，随 Desktop 同步演进。": "Maintained by MichengAI and updated alongside Desktop.",
@@ -93,6 +95,7 @@ const downloads = [
 ];
 
 const firstPartyPlugins = [
+  ["dsh-codex-pet", "@michengai/dsh-codex-pet", "桌面宠物", "选择桌面宠物，查看会话提醒并直接处理工具审批和问题回答。", "https://github.com/MichengAI/dsh-codex-pet"],
   ["dsh-codex-ui", "@michengai/dsh-codex-ui", "主界面", "提供项目、任务与会话工作区，把日常 Agent 协作收进一个桌面界面。", "https://github.com/MichengAI/dsh-codex-ui"],
   ["dsh-agency-agents", "@michengai/dsh-agency-agents", "专家预设", "按任务启用代码审查、架构、前端、后端与运维等专家预设。", "https://github.com/MichengAI/dsh-agency-agents"],
   ["dsh-skills-manager", "@michengai/dsh-skills-manager", "技能管理", "查看、启用、停用与管理本地及共享的 Agent 技能。", "https://github.com/MichengAI/dsh-skills-manager"],
@@ -103,12 +106,15 @@ const firstPartyPlugins = [
   ["dsh-simplify", "@michengai/dsh-simplify", "代码简化", "限定 Git 变更范围，帮助当前 Agent 在保持功能的前提下简化代码。", "https://github.com/MichengAI/dsh-simplify"],
 ];
 const communityPlugins = [
+  ["Git Graph", "@linxin666/dsh-client-ui-git-graph", "Git 图谱", "通过图形浏览 Git 提交历史与分支关系。", "https://github.com/zhu1090093659/dsh-web"],
   ["dsh-context", "dsh-context", "上下文管理", "查看上下文构成、使用情况与演进，帮助判断何时需要整理或压缩。", "https://github.com/bowenliang123/dsh-context"],
   ["dsh-better-sidebar", "dsh-better-sidebar", "增强侧边栏", "提供类似 VS Code 的文件、编辑器、终端、Git 与浏览器侧边栏。", "https://github.com/omdsh-dev/DSH-better-sidebar"],
   ["dsh-mcp-connector", "dsh-mcp-connector", "MCP 连接", "通过 OAuth、API Key、HTTP、stdio 或 JSON 配置添加并管理 MCP 服务。", "https://github.com/duhu2000/dsh-mcp-connector"],
   ["dsh-ui-usage-billing", "@kenz1117/dsh-ui-usage-billing", "用量统计", "汇总模型用量与费用，提供面向工作台的计费看板。", "https://github.com/kenz1117/dsh-ui-usage-billing"],
 ];
 const pluginLabelTranslations = {
+  "桌面宠物": "DESKTOP PET",
+  "Git 图谱": "GIT GRAPH",
   "主界面": "MAIN INTERFACE",
   "专家预设": "EXPERT PRESETS",
   "技能管理": "SKILL MANAGEMENT",
@@ -172,8 +178,8 @@ export function App() {
       <a className="official-support" href={currentReleaseUrl} target="_blank" rel="noreferrer" data-no-translate>
         <span className="page-width">
           <strong><i aria-hidden="true" />{locale === "zh" ? "已支持最新 DSH 官方版本" : "SUPPORTS THE LATEST OFFICIAL DSH RELEASE"}</strong>
-          <span>DeepSeek Harness 0.1.2-rc.1</span>
-          <b>{locale === "zh" ? "查看 v1.0.49" : "View v1.0.49"}<Arrow /></b>
+          <span>DeepSeek Harness 0.1.5-rc.2</span>
+          <b>{locale === "zh" ? "查看 v1.0.52" : "View v1.0.52"}<Arrow /></b>
         </span>
       </a>
       <section className="hero page-width" aria-labelledby="hero-title">
@@ -196,7 +202,7 @@ export function App() {
       <section className="downloads" id="downloads" aria-labelledby="downloads-title"><div className="page-width"><Kicker number="安装">当前发布版本</Kicker><div className="intro"><h2 id="downloads-title">选择系统和架构。</h2><p>GitHub Releases 保留各平台的最新安装包与历史版本。请选择与设备相符的安装包类型。</p></div><div className="download-grid">{downloads.map(([system, arch, type, label]) => <a className="download-card" key={`${system}-${arch}`} href={releaseUrl} target="_blank" rel="noreferrer"><small>{system}</small><h3>{arch}</h3><p>{type}</p><b>{label}<Arrow /></b></a>)}</div><p className="release-note"><b>注意</b><span>macOS 当前发布包尚未签名与公证，系统可能显示来源提示。完整发布记录与其他资产见 <a href={releaseUrl} target="_blank" rel="noreferrer">GitHub Releases <Arrow /></a>{locale === "zh" ? "。" : "."}</span></p></div></section>
       <section className="plugins page-width" id="plugins" aria-labelledby="plugins-title"><div className="intro plugin-intro"><div><Kicker number="组件">随附插件</Kicker><h2 id="plugins-title">常用内置插件，<br />覆盖常见工作环节。</h2></div><p>这些组件会在首次启动时准备到 DSH profile 中。每个插件都有自己的仓库、版本和更新路径；桌面端运行时不会被插件更新覆盖。</p></div><div className="plugin-groups"><div className="plugin-group"><div className="plugin-group-heading"><h3>自制插件</h3><p>由 MichengAI 维护，随 Desktop 同步演进。</p></div><div className="plugin-grid"><PluginCards plugins={firstPartyPlugins} locale={locale} /></div></div><div className="plugin-group"><div className="plugin-group-heading"><h3>社区插件</h3><p>由社区维护，作为桌面端的集成生态组件随包提供。</p></div><div className="plugin-grid"><PluginCards plugins={communityPlugins} locale={locale} /></div></div></div><div className="plugin-market-row"><a className="plugin plugin-market" href="https://dshmarket.com" target="_blank" rel="noreferrer"><div><small data-no-translate>{locale === "zh" ? "插件市场" : pluginLabelTranslations["插件市场"]}</small><Arrow /></div><h3>dshmarket</h3><p>随桌面端提供，用于发现、安装、更新、启用和诊断其他 DSH 插件。</p><code>dshmarket</code></a></div></section>
       <section className="changelog page-width" id="changelog" aria-labelledby="changelog-title">
-        <div className="intro changelog-intro"><div><Kicker number="版本">最近 5 个版本</Kicker><h2 id="changelog-title">跟进桌面端的每一次更新。</h2></div><p>以下内容整理自 GitHub Releases，按发布时间从新到旧排列。</p></div>
+        <div className="intro changelog-intro"><div><Kicker number="版本">最近 5 个版本</Kicker><h2 id="changelog-title">跟进桌面端的每一次更新。</h2></div><p>以下内容整理自 GitHub Releases，按版本号从新到旧排列。</p></div>
         <ol className="release-list" data-no-translate>
           {recentDesktopReleases.map((release, index) => <li className={index === 0 ? "is-latest" : ""} key={release.version}>
             <div className="release-stamp"><span>{locale === "zh" ? (index === 0 ? "最新版本" : "桌面端") : (index === 0 ? "LATEST" : "DESKTOP")}</span><strong>{release.version}</strong><time dateTime={release.date}>{release.date}</time></div>

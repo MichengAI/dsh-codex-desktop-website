@@ -7,26 +7,26 @@ const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf
 const faviconSource = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8");
 const releasesSource = readFileSync(new URL("../src/releases.js", import.meta.url), "utf8");
 
-test("highlights official DSH rc.1 support before the hero", () => {
+test("highlights official DSH rc.2 support before the hero", () => {
   const supportBanner = appSource.indexOf('className="official-support"');
   const hero = appSource.indexOf('<section className="hero page-width"');
 
   assert.ok(supportBanner >= 0);
   assert.ok(supportBanner < hero);
   assert.match(appSource, /已支持最新 DSH 官方版本/);
-  assert.match(appSource, /DeepSeek Harness 0\.1\.2-rc\.1/);
-  assert.match(appSource, /releases\/tag\/v1\.0\.49/);
-  assert.match(appSource, /查看 v1\.0\.49/);
-  assert.match(indexSource, /已支持 DSH 官方版本 0\.1\.2-rc\.1/);
+  assert.match(appSource, /DeepSeek Harness 0\.1\.5-rc\.2/);
+  assert.match(appSource, /releases\/tag\/v1\.0\.52/);
+  assert.match(appSource, /查看 v1\.0\.52/);
+  assert.match(indexSource, /已支持 DSH 官方版本 0\.1\.5-rc\.2/);
 });
 
-test("lists desktop v1.0.49 as the latest release", () => {
-  assert.match(releasesSource, /version: "v1\.0\.49"/);
-  assert.match(releasesSource, /releases\/tag\/v1\.0\.49/);
-  assert.ok(releasesSource.indexOf('version: "v1.0.49"') < releasesSource.indexOf('version: "v1.0.48"'));
+test("lists desktop v1.0.52 as the latest release", () => {
+  assert.match(releasesSource, /version: "v1\.0\.52"/);
+  assert.match(releasesSource, /releases\/tag\/v1\.0\.52/);
+  assert.ok(releasesSource.indexOf('version: "v1.0.52"') < releasesSource.indexOf('version: "v1.0.48"'));
 });
 
-test("shows thirteen bundled component cards before the five-release changelog", () => {
+test("shows fifteen bundled component cards before the five-release changelog", () => {
   const firstPartyPluginData = appSource.match(/const firstPartyPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const communityPluginData = appSource.match(/const communityPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const firstPartyPluginCount = (firstPartyPluginData.match(/^  \["/gm) ?? []).length;
@@ -34,8 +34,8 @@ test("shows thirteen bundled component cards before the five-release changelog",
   const pluginsSection = appSource.indexOf('<section className="plugins page-width"');
   const changelogSection = appSource.indexOf('<section className="changelog page-width"');
 
-  assert.equal(firstPartyPluginCount, 8);
-  assert.equal(communityPluginCount, 4);
+  assert.equal(firstPartyPluginCount, 9);
+  assert.equal(communityPluginCount, 5);
   assert.ok(pluginsSection >= 0);
   assert.ok(changelogSection > pluginsSection);
   assert.match(appSource, /最近 5 个版本/);
@@ -50,7 +50,7 @@ test("places dshmarket after the self-made and community plugin groups and ships
   assert.match(appSource.slice(marketCard), /<h3>dshmarket<\/h3>/);
   assert.doesNotMatch(appSource, /<aside className="market">/);
   assert.match(indexSource, /href="\/favicon\.svg\?v=4"/);
-  assert.match(indexSource, /内置 13 个常用组件/);
+  assert.match(indexSource, /内置 15 个常用组件/);
   assert.ok(existsSync(new URL("../public/favicon.png", import.meta.url)));
   assert.ok(existsSync(new URL("../public/favicon.svg", import.meta.url)));
   assert.match(faviconSource, /viewBox="94 90 325 325"/);
@@ -62,6 +62,7 @@ test("separates self-made and community plugins by their maintainers", () => {
   const firstPartyPluginData = appSource.match(/const firstPartyPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const communityPluginData = appSource.match(/const communityPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const firstPartyProjectNames = [
+    "dsh-codex-pet",
     "dsh-codex-ui",
     "dsh-agency-agents",
     "dsh-skills-manager",
@@ -72,6 +73,7 @@ test("separates self-made and community plugins by their maintainers", () => {
     "dsh-simplify",
   ];
   const communityProjectNames = [
+    "Git Graph",
     "dsh-context",
     "dsh-better-sidebar",
     "dsh-mcp-connector",
