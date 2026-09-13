@@ -26,7 +26,7 @@ test("lists desktop v1.0.52 as the latest release", () => {
   assert.ok(releasesSource.indexOf('version: "v1.0.52"') < releasesSource.indexOf('version: "v1.0.48"'));
 });
 
-test("shows fifteen bundled component cards before the five-release changelog", () => {
+test("shows seventeen ecosystem component cards before the five-release changelog", () => {
   const firstPartyPluginData = appSource.match(/const firstPartyPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const communityPluginData = appSource.match(/const communityPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const firstPartyPluginCount = (firstPartyPluginData.match(/^  \["/gm) ?? []).length;
@@ -34,7 +34,7 @@ test("shows fifteen bundled component cards before the five-release changelog", 
   const pluginsSection = appSource.indexOf('<section className="plugins page-width"');
   const changelogSection = appSource.indexOf('<section className="changelog page-width"');
 
-  assert.equal(firstPartyPluginCount, 9);
+  assert.equal(firstPartyPluginCount, 11);
   assert.equal(communityPluginCount, 5);
   assert.ok(pluginsSection >= 0);
   assert.ok(changelogSection > pluginsSection);
@@ -71,6 +71,8 @@ test("separates self-made and community plugins by their maintainers", () => {
     "dsh-automation",
     "dsh-btw",
     "dsh-simplify",
+    "dsh-pua",
+    "dsh-code-review",
   ];
   const communityProjectNames = [
     "Git Graph",
@@ -87,7 +89,7 @@ test("separates self-made and community plugins by their maintainers", () => {
 });
 
 test("uses descriptive labels instead of numeric plugin card labels", () => {
-  const labels = ["主界面", "专家预设", "技能管理", "会话归档", "消息连接", "自动化任务", "上下文管理", "增强侧边栏", "MCP 连接", "用量统计", "只读旁问", "代码简化", "插件市场"];
+  const labels = ["主界面", "专家预设", "技能管理", "会话归档", "消息连接", "自动化任务", "上下文管理", "增强侧边栏", "MCP 连接", "用量统计", "只读旁问", "代码简化", "任务推进", "代码审查", "插件市场"];
 
   for (const label of labels) assert.match(appSource, new RegExp(`>${label}<|"${label}"`));
   assert.doesNotMatch(appSource, /String\(index \+ 1\)\.padStart/);
