@@ -7,26 +7,26 @@ const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf
 const faviconSource = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8");
 const releasesSource = readFileSync(new URL("../src/releases.js", import.meta.url), "utf8");
 
-test("highlights official DSH rc.2 support before the hero", () => {
+test("highlights official DSH alpha.1 support before the hero", () => {
   const supportBanner = appSource.indexOf('className="official-support"');
   const hero = appSource.indexOf('<section className="hero page-width"');
 
   assert.ok(supportBanner >= 0);
   assert.ok(supportBanner < hero);
   assert.match(appSource, /已支持最新 DSH 官方版本/);
-  assert.match(appSource, /DeepSeek Harness 0\.1\.5-rc\.2/);
-  assert.match(appSource, /releases\/tag\/v1\.0\.52/);
-  assert.match(appSource, /查看 v1\.0\.52/);
-  assert.match(indexSource, /已支持 DSH 官方版本 0\.1\.5-rc\.2/);
+  assert.match(appSource, /DeepSeek Harness 0\.1\.6-alpha\.1/);
+  assert.match(appSource, /releases\/tag\/v1\.0\.63/);
+  assert.match(appSource, /查看 v1\.0\.63/);
+  assert.match(indexSource, /已支持 DSH 官方版本 0\.1\.6-alpha\.1/);
 });
 
-test("lists desktop v1.0.52 as the latest release", () => {
-  assert.match(releasesSource, /version: "v1\.0\.52"/);
-  assert.match(releasesSource, /releases\/tag\/v1\.0\.52/);
-  assert.ok(releasesSource.indexOf('version: "v1.0.52"') < releasesSource.indexOf('version: "v1.0.48"'));
+test("lists desktop v1.0.63 as the latest release", () => {
+  assert.match(releasesSource, /version: "v1\.0\.63"/);
+  assert.match(releasesSource, /releases\/tag\/v1\.0\.63/);
+  assert.ok(releasesSource.indexOf('version: "v1.0.63"') < releasesSource.indexOf('version: "v1.0.52"'));
 });
 
-test("shows seventeen ecosystem component cards before the five-release changelog", () => {
+test("shows sixteen ecosystem component cards before the five-release changelog", () => {
   const firstPartyPluginData = appSource.match(/const firstPartyPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const communityPluginData = appSource.match(/const communityPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const firstPartyPluginCount = (firstPartyPluginData.match(/^  \["/gm) ?? []).length;
@@ -35,7 +35,7 @@ test("shows seventeen ecosystem component cards before the five-release changelo
   const changelogSection = appSource.indexOf('<section className="changelog page-width"');
 
   assert.equal(firstPartyPluginCount, 11);
-  assert.equal(communityPluginCount, 5);
+  assert.equal(communityPluginCount, 4);
   assert.ok(pluginsSection >= 0);
   assert.ok(changelogSection > pluginsSection);
   assert.match(appSource, /最近 5 个版本/);
@@ -50,7 +50,7 @@ test("places dshmarket after the self-made and community plugin groups and ships
   assert.match(appSource.slice(marketCard), /<h3>dshmarket<\/h3>/);
   assert.doesNotMatch(appSource, /<aside className="market">/);
   assert.match(indexSource, /href="\/favicon\.svg\?v=4"/);
-  assert.match(indexSource, /内置 15 个常用组件/);
+  assert.match(indexSource, /内置 16 个常用组件/);
   assert.ok(existsSync(new URL("../public/favicon.png", import.meta.url)));
   assert.ok(existsSync(new URL("../public/favicon.svg", import.meta.url)));
   assert.match(faviconSource, /viewBox="94 90 325 325"/);
@@ -75,7 +75,6 @@ test("separates self-made and community plugins by their maintainers", () => {
     "dsh-code-review",
   ];
   const communityProjectNames = [
-    "Git Graph",
     "dsh-context",
     "dsh-better-sidebar",
     "dsh-mcp-connector",
@@ -84,6 +83,10 @@ test("separates self-made and community plugins by their maintainers", () => {
 
   for (const projectName of firstPartyProjectNames) assert.match(firstPartyPluginData, new RegExp(`\\["${projectName}",`));
   for (const projectName of communityProjectNames) assert.match(communityPluginData, new RegExp(`\\["${projectName}",`));
+  assert.doesNotMatch(appSource, /Git Graph|git-graph|Git 图谱|Git 提交图谱/);
+  assert.match(appSource, /preview-usage-billing\.webp/);
+  assert.ok(existsSync(new URL("../public/assets/screenshots/preview-usage-billing.webp", import.meta.url)));
+  assert.ok(!existsSync(new URL("../public/assets/screenshots/preview-git-graph.webp", import.meta.url)));
   assert.match(appSource, /<h3>自制插件<\/h3>/);
   assert.match(appSource, /<h3>社区插件<\/h3>/);
 });

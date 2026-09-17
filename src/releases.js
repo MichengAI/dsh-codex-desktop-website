@@ -1,5 +1,72 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.63",
+    date: "2026-09-16",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.63",
+    zh: [
+      "内置官方 DSH 运行时由 0.1.5-rc.2 升级至 0.1.6-alpha.1，并同步 scope、timeout、invariants 启动依赖。",
+      "15 项内置插件升级到当前 npm latest：Codex UI 1.1.11、IM Connect 0.1.50、Automation 0.1.44、Skills Manager 0.1.52、Archive Manager 0.1.43、Agency Agents 0.1.43、Codex Pet 0.1.6、BTW 0.1.8、Simplify 0.1.5、Code Review 0.1.2、PUA 0.3.13、Context 0.53.0、MCP Connector 0.2.49、Usage Billing 1.4.0、dshmarket 1.47.0。Better Sidebar 已是 latest。",
+    ],
+    en: [
+      "Updated the bundled official DSH runtime from 0.1.5-rc.2 to 0.1.6-alpha.1, including matching scope, timeout, and invariants launch peers.",
+      "Refreshed 15 bundled plugins to current npm latest: Codex UI 1.1.11, IM Connect 0.1.50, Automation 0.1.44, Skills Manager 0.1.52, Archive Manager 0.1.43, Agency Agents 0.1.43, Codex Pet 0.1.6, BTW 0.1.8, Simplify 0.1.5, Code Review 0.1.2, PUA 0.3.13, Context 0.53.0, MCP Connector 0.2.49, Usage Billing 1.4.0, and dshmarket 1.47.0. Better Sidebar was already latest.",
+    ],
+  },
+  {
+    version: "v1.0.62",
+    date: "2026-09-15",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.62",
+    zh: [
+      "修复内网首次启动时，共享 Web 配置已有 node_modules 但没有记录 pnpm 仓库、桌面改去访问 npm 导致专家/插件/技能装不上的问题；现在改用随包离线仓库补种。",
+      "冷启动等待加长：进程就绪由 45 秒改为 120 秒，页面完成插件加载由 30 秒改为 90 秒。慢启动不再用失败窗盖掉工作台。",
+      "pack / dist 会先清掉残留运行时目录和额外的 release-* 目录，避免沿用旧的随包插件仓库。",
+    ],
+    en: [
+      "Fixed first launch on an intranet when the shared Web profile already has node_modules but no recorded pnpm store; Desktop now seeds from the bundled offline plugin store.",
+      "Gave cold starts more time: process ready wait is now 120 seconds (was 45) and workbench plugin loading is 90 seconds (was 30). A slow first launch no longer replaces the workbench with an error screen.",
+      "pack and dist now delete leftover runtime folders and extra release-* directories first, so a stale bundled plugin store cannot be reused.",
+    ],
+  },
+  {
+    version: "v1.0.61",
+    date: "2026-09-14",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.61",
+    zh: [
+      "修复从旧版安装目录（例如 1.0.41）离线升级时，随包插件仓库缺少完整元数据、启动提示内置插件更新未完成并去请求 npm 的问题。",
+      "新版本可在无网络环境下完成配套插件更新。",
+    ],
+    en: [
+      "Fixed offline upgrades from older install folders (for example 1.0.41) failing when the bundled plugin store lacked full package metadata and then contacted the npm registry.",
+      "The new build can finish bundled plugin updates without a network.",
+    ],
+  },
+  {
+    version: "v1.0.60",
+    date: "2026-09-14",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.60",
+    zh: [
+      "更新内置 Codex UI、IM Connect、自动化、归档管理、Context 和 MCP Connector 六项插件及其离线依赖。",
+      "桌面运行环境升级至 Electron 44.3.0、Node.js 24.21.0，内置依赖管理工具升级至 pnpm 11.26.0；DSH 保持 0.1.5-rc.2。",
+    ],
+    en: [
+      "Updated bundled Codex UI, IM Connect, automation, archive manager, Context, and MCP Connector plugins and their offline dependencies.",
+      "Updated the desktop runtime to Electron 44.3.0 and Node.js 24.21.0, and the bundled package manager to pnpm 11.26.0. DSH remained on 0.1.5-rc.2.",
+    ],
+  },
+  {
+    version: "v1.0.59",
+    date: "2026-09-14",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.59",
+    zh: [
+      "修复旧配置下插件安装或更新因 node-pty、protobufjs 构建许可缺失而失败的问题。",
+      "升级后启动会补齐必要许可，并恢复此前已安装但未完成构建的配套依赖，无需删除用户配置。",
+    ],
+    en: [
+      "Fixed plugin installation and updates failing when older profiles lack build permissions for node-pty or protobufjs.",
+      "Startup after upgrading adds the required permissions and completes previously blocked builds for bundled dependencies, without deleting user configuration.",
+    ],
+  },
+  {
     version: "v1.0.52",
     date: "2026-09-11",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.52",
