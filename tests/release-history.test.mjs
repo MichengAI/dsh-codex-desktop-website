@@ -7,7 +7,7 @@ test("publishes exactly the latest five desktop releases", () => {
   assert.equal(recentDesktopReleases.length, 5);
   assert.deepEqual(
     recentDesktopReleases.map((release) => release.version),
-    ["v1.0.63", "v1.0.62", "v1.0.61", "v1.0.60", "v1.0.59"],
+    ["v1.0.64", "v1.0.63", "v1.0.62", "v1.0.61", "v1.0.60"],
   );
 });
 

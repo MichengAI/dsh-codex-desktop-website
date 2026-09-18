@@ -1,5 +1,18 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.64",
+    date: "2026-09-18",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.64",
+    zh: [
+      "内置官方 DSH 运行时由 0.1.6-alpha.1 升级至 0.1.6-alpha.2，并同步 scope、timeout、invariants 启动依赖。",
+      "13 项内置插件升级到当前 npm latest：Codex UI 1.1.13、IM Connect 0.1.51、Automation 0.1.45、Skills Manager 0.1.53、Archive Manager 0.1.44、Agency Agents 0.1.44、Codex Pet 0.1.7、BTW 0.1.10、Simplify 0.1.7、Code Review 0.1.4、PUA 0.3.16、Context 0.53.3、MCP Connector 0.2.51。Better Sidebar、Usage Billing、dshmarket 已是 latest。",
+    ],
+    en: [
+      "Updated the bundled official DSH runtime from 0.1.6-alpha.1 to 0.1.6-alpha.2, including matching scope, timeout, and invariants launch peers.",
+      "Refreshed 13 bundled plugins to current npm latest: Codex UI 1.1.13, IM Connect 0.1.51, Automation 0.1.45, Skills Manager 0.1.53, Archive Manager 0.1.44, Agency Agents 0.1.44, Codex Pet 0.1.7, BTW 0.1.10, Simplify 0.1.7, Code Review 0.1.4, PUA 0.3.16, Context 0.53.3, and MCP Connector 0.2.51. Better Sidebar, Usage Billing, and dshmarket were already latest.",
+    ],
+  },
+  {
     version: "v1.0.63",
     date: "2026-09-16",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.63",
