@@ -6,7 +6,7 @@
 
 下载最新版请前往[桌面应用发布页](https://github.com/MichengAI/dsh-codex-desktop/releases)。
 
-当前桌面端版本为 **v1.0.64**，内置 **DSH 0.1.6-alpha.2** 和 **16 个组件（含插件市场）**。新版使用 Session V3；升级前请备份重要会话，新版写入的会话不能直接由旧版读取。
+当前桌面端版本为 **v1.0.80**，内置 **DSH 0.2.0-rc.2** 和 **13 个组件（含插件市场）**。新安装不再随包 Context、Usage Billing 和 MCP Connector，已经安装的会保留。新版使用 Session V3；升级前请备份重要会话，新版写入的会话不能直接由旧版读取。
 
 ## 获取桌面应用
 

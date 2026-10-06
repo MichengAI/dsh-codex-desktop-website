@@ -1,5 +1,82 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.80",
+    date: "2026-10-06",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.80",
+    zh: [
+      "DSH 页面现在提供官方 dshDesktop 标记，桌面端侧栏左下角会显示官方账号登录。登录仍走官方账号服务，本壳不保存凭证。",
+      "登录进入等待浏览器时，用系统浏览器打开官方授权页。同一次尝试不会重复打开；尝试结束、浏览器打不开，或过了十分钟后，可以再开。",
+      "登录完成页打开 dsh://open 时回到本桌面，不再交给已安装的官方桌面。",
+      "桌面窗口里的菜单底色改为实底，避免侧栏文字透出账号菜单。",
+      "内置插件升级到当前最新版：Codex UI 1.1.29、IM Connect 0.1.64、Automation 0.1.54、Skills Manager 1.1.10、Archive Manager 1.0.13、Agency Agents 1.0.9、Codex Pet 0.1.13、BTW 0.1.16、Simplify 0.1.14、Code Review 0.1.11、PUA 0.3.23、dshmarket 1.66.9。Better Sidebar 0.24.1 和官方 DSH 0.2.0-rc.2 已是当前最新版，本次不变。",
+    ],
+    en: [
+      "The DSH page now exposes the official dshDesktop marker, so Desktop shows the official account sign-in control at the bottom of the sidebar. Sign-in still uses the official account service; this shell does not store credentials.",
+      "When sign-in is waiting for the browser, Desktop opens the official DeepSeek authorize page. The same page is not opened again until that attempt ends, the browser fails to open, or ten minutes pass.",
+      "A completed sign-in that opens dsh://open returns to this desktop instead of the installed official DeepSeek Harness.",
+      "Menu surfaces in the desktop window are more opaque, so sidebar text no longer shows through the account menu.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 1.1.29, IM Connect 0.1.64, Automation 0.1.54, Skills Manager 1.1.10, Archive Manager 1.0.13, Agency Agents 1.0.9, Codex Pet 0.1.13, BTW 0.1.16, Simplify 0.1.14, Code Review 0.1.11, PUA 0.3.23, and dshmarket 1.66.9. Better Sidebar 0.24.1 and official DSH 0.2.0-rc.2 were already the latest versions and are unchanged.",
+    ],
+  },
+  {
+    version: "v1.0.79",
+    date: "2026-10-01",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.79",
+    zh: [
+      "开启局域网访问后，桌面端不再在两分钟后误报启动超时。本机窗口仍只打开 127.0.0.1。",
+      "内置插件升级到当前最新版：IM Connect 0.1.60、Skills Manager 1.1.8、Archive Manager 1.0.10、Simplify 0.1.13、Code Review 0.1.10、PUA 0.3.22、dshmarket 1.66.7。Codex UI 1.1.25、Automation 0.1.53、Agency Agents 1.0.7、Codex Pet 0.1.12、BTW 0.1.15、Better Sidebar 0.24.1 已是当前最新版，本次不变。",
+    ],
+    en: [
+      "Turning on LAN access no longer makes Desktop report a startup timeout after two minutes. The window still opens only the local 127.0.0.1 address.",
+      "Bundled plugins are upgraded to their current latest versions: IM Connect 0.1.60, Skills Manager 1.1.8, Archive Manager 1.0.10, Simplify 0.1.13, Code Review 0.1.10, PUA 0.3.22, and dshmarket 1.66.7. Codex UI 1.1.25, Automation 0.1.53, Agency Agents 1.0.7, Codex Pet 0.1.12, BTW 0.1.15, and Better Sidebar 0.24.1 were already the latest versions and are unchanged.",
+    ],
+  },
+  {
+    version: "v1.0.78",
+    date: "2026-09-30",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.78",
+    zh: [
+      "内置 DSH 运行时由 0.2.0-rc.1 升级到 0.2.0-rc.2，并同步 scope、timeout、invariants 与启动依赖。",
+      "内置插件升级到当前最新版：Codex UI 1.1.25、IM Connect 0.1.58、Automation 0.1.53、Skills Manager 1.1.7、Archive Manager 1.0.9、Agency Agents 1.0.7、Codex Pet 0.1.12、BTW 0.1.15、Simplify 0.1.12、Code Review 0.1.9、PUA 0.3.21、dshmarket 1.66.6。Better Sidebar 0.24.1 已是当前最新版，本次不变。",
+    ],
+    en: [
+      "The bundled DSH runtime moves from 0.2.0-rc.1 to 0.2.0-rc.2, together with scope, timeout, invariants and the required launch dependencies.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 1.1.25, IM Connect 0.1.58, Automation 0.1.53, Skills Manager 1.1.7, Archive Manager 1.0.9, Agency Agents 1.0.7, Codex Pet 0.1.12, BTW 0.1.15, Simplify 0.1.12, Code Review 0.1.9, PUA 0.3.21, and dshmarket 1.66.6. Better Sidebar 0.24.1 was already the latest version and is unchanged.",
+    ],
+  },
+  {
+    version: "v1.0.77",
+    date: "2026-09-29",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.77",
+    zh: [
+      "内置 DSH 运行时由 0.1.7-rc.2 升级到 0.2.0-rc.1，并同步 scope、timeout、invariants 与启动依赖。",
+      "内置插件升级到当前最新版：Codex UI 1.1.22、IM Connect 0.1.57、Automation 0.1.52、Skills Manager 1.1.5、Archive Manager 1.0.7、Agency Agents 1.0.6、Codex Pet 0.1.11、BTW 0.1.14、Simplify 0.1.11、Code Review 0.1.8、PUA 0.3.19、Better Sidebar 0.24.1、dshmarket 1.66.5。",
+      "新安装不再附带 MCP 连接器；已经安装的仍会保留。",
+      "官方定时任务改为可选插件，默认关闭；需要时在插件管理的官方分组中打开。已保存的任务仍会保留。",
+      "Windows 压缩包发现新版本时，不再下载或运行安装包。它会打开对应的 zip；请退出后替换当前文件夹。不要运行安装包，否则会在另一个位置再装一份。",
+    ],
+    en: [
+      "The bundled DSH runtime moves from 0.1.7-rc.2 to 0.2.0-rc.1, together with scope, timeout, invariants and the required launch dependencies.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 1.1.22, IM Connect 0.1.57, Automation 0.1.52, Skills Manager 1.1.5, Archive Manager 1.0.7, Agency Agents 1.0.6, Codex Pet 0.1.11, BTW 0.1.14, Simplify 0.1.11, Code Review 0.1.8, PUA 0.3.19, Better Sidebar 0.24.1, and dshmarket 1.66.5.",
+      "New installs no longer include the MCP connector. A copy you already installed is kept.",
+      "Official scheduling is now an optional bundle and stays off unless enabled in plugin management. Saved tasks are kept.",
+      "A Windows zip build no longer downloads or runs an installer. It opens the matching zip; quit and replace the current folder. Do not run the installer, or it will install a second copy elsewhere.",
+    ],
+  },
+  {
+    version: "v1.0.76",
+    date: "2026-09-25",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.76",
+    zh: [
+      "内置 DSH 运行时由 0.1.7-rc.1 升级到 0.1.7-rc.2，并同步 scope、timeout、invariants 与启动依赖。",
+      "内置插件升级到当前最新版：Codex UI 1.1.18、IM Connect 0.1.55、Automation 0.1.51、Skills Manager 1.1.4、Archive Manager 1.0.5、Agency Agents 1.0.5、Codex Pet 0.1.10、BTW 0.1.13、Simplify 0.1.10、Code Review 0.1.7、PUA 0.3.18、dshmarket 1.65.1。Better Sidebar 0.21.1 和 MCP Connector 0.2.58 已是当前最新版，本次不变。",
+    ],
+    en: [
+      "The bundled DSH runtime moves from 0.1.7-rc.1 to 0.1.7-rc.2, together with scope, timeout, invariants and the required launch dependencies.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 1.1.18, IM Connect 0.1.55, Automation 0.1.51, Skills Manager 1.1.4, Archive Manager 1.0.5, Agency Agents 1.0.5, Codex Pet 0.1.10, BTW 0.1.13, Simplify 0.1.10, Code Review 0.1.7, PUA 0.3.18, and dshmarket 1.65.1. Better Sidebar 0.21.1 and MCP Connector 0.2.58 were already the latest versions and are unchanged.",
+    ],
+  },
+  {
     version: "v1.0.64",
     date: "2026-09-18",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.64",

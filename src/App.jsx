@@ -4,7 +4,7 @@ import { recentDesktopReleases } from "./releases.js";
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
 const releaseUrl = `${desktopRepositoryUrl}/releases/latest`;
-const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.64`;
+const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.80`;
 
 
 const translations = {
@@ -14,12 +14,12 @@ const translations = {
   "页面导航": "Page navigation", "桌面端": "Desktop", "下载": "Downloads", "更新日志": "Changelog", "插件": "Plugins",
   "切换至暗色模式": "Switch to dark mode", "切换至亮色模式": "Switch to light mode", "切换至英文": "Switch to English", "切换至中文": "Switch to Chinese",
   "Codex UI 以及": "Codex UI and", "常用内置插件。": "everyday built-in plugins.",
-  "DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、上下文管理、MCP 连接、用量统计和增强侧边栏带到桌面端。": "DSH Codex Desktop brings Codex UI, expert presets, skill management, conversation archives, IM Connect, automation, context management, MCP connections, usage billing, and an enhanced sidebar to the desktop.",
+  "DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、代码审查和增强侧边栏带到桌面端。": "DSH Codex Desktop brings Codex UI, expert presets, skill management, conversation archives, IM Connect, automation, code review, and an enhanced sidebar to the desktop.",
   "下载桌面端": "Download desktop app", "查看插件生态": "View plugin ecosystem", "支持系统": "Platforms", "运行方式": "Runtime", "本机服务": "Local service", "更新入口": "Updates",
   "DSH Codex Desktop 首页": "DSH Codex Desktop home", "放大查看 DSH Codex Desktop 首页": "Open DSH Codex Desktop home", "Codex UI 以及常用内置插件": "Codex UI and everyday built-in plugins",
   "内置本地运行环境": "Built-in local runtime", "用户数据保留在本机": "User data stays local", "插件可独立更新": "Plugins update independently", "通过 Releases 获取新版本": "New versions via Releases",
   "功能": "FEATURES", "桌面端包含什么": "What is in the desktop app", "一个应用，管理 Codex UI": "One app for Codex UI", "和常用的 DSH 组件。": "and everyday DSH tools.",
-  "安装桌面端后，可以在 Codex UI 中处理项目、任务和会话；专家预设、技能、归档、IM Connect、自动化、上下文管理和增强侧边栏作为独立组件随应用提供。": "Use Codex UI for projects, tasks, and conversations. Expert presets, skills, archives, IM Connect, automation, context management, and the enhanced sidebar are included as independent components.",
+  "安装桌面端后，可以在 Codex UI 中处理项目、任务和会话；专家预设、技能、归档、IM Connect、自动化和增强侧边栏作为独立组件随应用提供。": "Use Codex UI for projects, tasks, and conversations. Expert presets, skills, archives, IM Connect, automation, and the enhanced sidebar are included as independent components.",
   "DSH Codex Desktop 深色会话工作区": "DSH Codex Desktop dark conversation workspace", "放大查看深色会话工作区": "Open dark conversation workspace",
   "Codex UI 是主界面": "Codex UI is the main interface", "围绕项目、任务与会话组织日常 Agent 工作，而不是单独启动一个底层运行时。": "Organize daily Agent work around projects, tasks, and conversations instead of starting a runtime on its own.",
   "插件集合开箱即用": "Plugins are ready to use", "常用内置插件随首次启动准备完成，按你的工作方式选择并持续扩展。": "Everyday built-in plugins are prepared on first launch. Choose what fits your workflow and extend it over time.",
@@ -183,15 +183,15 @@ export function App() {
       <a className="official-support" href={currentReleaseUrl} target="_blank" rel="noreferrer" data-no-translate>
         <span className="page-width">
           <strong><i aria-hidden="true" />{locale === "zh" ? "已支持最新 DSH 官方版本" : "SUPPORTS THE LATEST OFFICIAL DSH RELEASE"}</strong>
-          <span>DeepSeek Harness 0.1.6-alpha.2</span>
-          <b>{locale === "zh" ? "查看 v1.0.64" : "View v1.0.64"}<Arrow /></b>
+          <span>DeepSeek Harness 0.2.0-rc.2</span>
+          <b>{locale === "zh" ? "查看 v1.0.80" : "View v1.0.80"}<Arrow /></b>
         </span>
       </a>
       <section className="hero page-width" aria-labelledby="hero-title">
         <div>
           <p className="eyebrow"><i />DSH CODEX DESKTOP</p>
           <h1 id="hero-title">Codex UI 以及<br /><em>常用内置插件。</em></h1>
-          <p className="lead">DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、上下文管理、MCP 连接、用量统计和增强侧边栏带到桌面端。</p>
+          <p className="lead">DSH Codex Desktop 将 Codex UI、专家预设、技能管理、会话归档、IM Connect、自动化、代码审查和增强侧边栏带到桌面端。</p>
           <div className="actions"><a className="button primary" href={releaseUrl} target="_blank" rel="noreferrer">下载桌面端<Arrow /></a><a className="button ghost" href="#plugins">查看插件生态</a></div>
           <div className="hero-meta"><span><b>支持系统</b> Windows / macOS / Linux</span><span><b>运行方式</b> 本机服务</span><span><b>更新入口</b> GitHub Releases</span></div>
         </div>
@@ -199,7 +199,7 @@ export function App() {
       </section>
       <section className="signal"><div className="page-width"><span>内置本地运行环境</span><i>·</i><span>用户数据保留在本机</span><i>·</i><span>插件可独立更新</span><i>·</i><span>通过 Releases 获取新版本</span></div></section>
       <section className="desktop page-width" id="desktop" aria-labelledby="desktop-title">
-        <Kicker number="功能">桌面端包含什么</Kicker><div className="intro"><h2 id="desktop-title">一个应用，管理 Codex UI<br />和常用的 DSH 组件。</h2><p>安装桌面端后，可以在 Codex UI 中处理项目、任务和会话；专家预设、技能、归档、IM Connect、自动化、上下文管理和增强侧边栏作为独立组件随应用提供。</p></div>
+        <Kicker number="功能">桌面端包含什么</Kicker><div className="intro"><h2 id="desktop-title">一个应用，管理 Codex UI<br />和常用的 DSH 组件。</h2><p>安装桌面端后，可以在 Codex UI 中处理项目、任务和会话；专家预设、技能、归档、IM Connect、自动化和增强侧边栏作为独立组件随应用提供。</p></div>
         <div className="desktop-grid"><div className="preview"><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-conversation.webp", alt: "DSH Codex Desktop 深色会话工作区" })} aria-label="放大查看深色会话工作区"><img loading="lazy" decoding="async" width="1280" height="800" src="/assets/screenshots/preview-conversation.webp" alt="DSH Codex Desktop 深色会话工作区" /></button></div><div className="capabilities"><article><b>01</b><div><h3>Codex UI 是主界面</h3><p>围绕项目、任务与会话组织日常 Agent 工作，而不是单独启动一个底层运行时。</p></div></article><article><b>02</b><div><h3>插件集合开箱即用</h3><p>常用内置插件随首次启动准备完成，按你的工作方式选择并持续扩展。</p></div></article><article><b>03</b><div><h3>桌面端负责交付</h3><p>内置本地运行环境并保留用户数据，让工作台可直接安装、更新和使用。</p></div></article></div></div>
         <div className="screenshot-gallery" aria-label="DSH Codex Desktop 产品截图"><figure><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-experts.webp", alt: "专家预设管理界面" })} aria-label="放大查看专家预设"><img loading="lazy" decoding="async" width="2512" height="1440" src="/assets/screenshots/preview-experts.webp" alt="专家预设管理界面" /></button><figcaption><b>专家预设</b><span>为当前任务选择所需专业角色。</span></figcaption></figure><figure><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-skills.webp", alt: "技能管理界面" })} aria-label="放大查看技能中心"><img loading="lazy" decoding="async" width="2512" height="1440" src="/assets/screenshots/preview-skills.webp" alt="技能管理界面" /></button><figcaption><b>技能中心</b><span>集中管理 Agent 可用技能。</span></figcaption></figure><figure><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-archive.webp", alt: "归档会话管理界面" })} aria-label="放大查看归档管理"><img loading="lazy" decoding="async" width="2512" height="1440" src="/assets/screenshots/preview-archive.webp" alt="归档会话管理界面" /></button><figcaption><b>归档管理</b><span>检索、恢复与整理工作历史。</span></figcaption></figure><figure><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-im-connect.webp", alt: "IM 频道配置界面" })} aria-label="放大查看 IM Connect"><img loading="lazy" decoding="async" width="2512" height="1440" src="/assets/screenshots/preview-im-connect.webp" alt="IM 频道配置界面" /></button><figcaption><b>IM Connect</b><span>连接可用的消息协作频道。</span></figcaption></figure><figure><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-pets.webp", alt: "桌面宠物设置" })} aria-label="放大查看桌面宠物设置"><img loading="lazy" decoding="async" width="2512" height="1440" src="/assets/screenshots/preview-pets.webp" alt="桌面宠物设置" /></button><figcaption><b>桌面宠物设置</b><span>选择宠物并开启桌面显示。</span></figcaption></figure><figure><button className="screenshot-trigger" type="button" onClick={() => setActiveScreenshot({ src: "/assets/screenshots/preview-usage-billing.webp", alt: "用量统计界面" })} aria-label="放大查看用量统计"><img loading="lazy" decoding="async" width="2512" height="1440" src="/assets/screenshots/preview-usage-billing.webp" alt="用量统计界面" /></button><figcaption><b>用量统计</b><span>汇总模型用量、费用与活跃情况。</span></figcaption></figure></div>
         <style>{`.screenshot-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:45px}.screenshot-gallery figure{min-width:0;margin:0;overflow:hidden;border:1px solid rgb(145 190 220 / 22%);border-radius:10px;background:#0b1b2b}.screenshot-gallery .screenshot-wide{grid-column:span 2}.screenshot-gallery img{display:block;width:100%;height:auto;aspect-ratio:1.75;object-fit:contain;object-position:top;transition:transform .25s ease}.screenshot-gallery figure:hover img{transform:scale(1.025)}.screenshot-gallery figcaption{padding:13px 14px 15px}.screenshot-gallery figcaption b,.screenshot-gallery figcaption span{display:block}.screenshot-gallery figcaption b{margin-bottom:5px;font-size:13px}.screenshot-gallery figcaption span{color:#8fa9bd;font-size:11px;line-height:1.5}@media(max-width:930px){.screenshot-gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.screenshot-gallery{grid-template-columns:1fr;margin-top:28px}.screenshot-gallery .screenshot-wide{grid-column:auto}}`}</style>
