@@ -6,7 +6,7 @@ This repository contains the website source for [DSH Codex Desktop](https://gith
 
 Download the latest version from the [desktop app releases](https://github.com/MichengAI/dsh-codex-desktop/releases).
 
-The current desktop release is **v1.0.80**, bundling **DSH 0.2.0-rc.2** and **13 components (including the plugin market)**. New installs no longer include Context, Usage Billing, or the MCP connector; copies already installed are kept. This version uses Session V3. Back up important conversations before upgrading; conversations written by the new version cannot be read directly by older versions.
+The current desktop release is **v1.0.87**, bundling **DSH 0.2.1-rc.2** and **14 components (including the plugin market)**. New installs include Context. Usage Billing and the MCP connector are not bundled; copies already installed are kept. Back up important conversations before upgrading.
 
 ## Get the desktop app
 
