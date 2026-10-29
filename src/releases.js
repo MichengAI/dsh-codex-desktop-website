@@ -1,5 +1,54 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.92",
+    date: "2026-10-29",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.92",
+    zh: [
+      "这是 1.0.89 之后的首个发布。",
+      "内置 DSH 运行时由 0.2.1-rc.3 升级到 0.2.2-alpha.2，并同步 group、scope、timeout 与启动依赖。",
+      "内置插件升级到当前最新版：Codex UI 2.0.4、IM Connect 1.0.20、Automation 1.0.13、Skills Manager 1.2.22、Archive Manager 1.1.18、Agency Agents 1.2.18、Codex Pet 1.0.7、BTW 1.3.0、Simplify 1.0.5、Code Review 1.0.5、PUA 1.0.5、Better Sidebar 0.28.2、dshmarket 1.73.3 与 Context 0.78.0。安装包会按这些精确版本装配离线插件。",
+      "打包冒烟检查鲁棒性：服务就绪后为前端渲染分配独立的就绪超时，避免在慢速虚拟化环境中因首启依赖补种耗时导致误报启动超时。",
+      "新安装继续随包 Context。费用插件和 MCP 连接器仍不附带，已经安装的会保留。官方定时任务默认关闭，需要时再打开，已保存的任务会保留。桌面宠物空闲时会跟着光标转头。从更早版本升级时，离线也能装上配套插件，并保留原有插件配置。Windows 安装包首次启动不再缺少配套插件依赖。Windows 压缩包发现新版本时会打开对应的 zip，请退出后替换当前文件夹，不要运行安装包。",
+    ],
+    en: [
+      "This is the first release after 1.0.89.",
+      "The bundled DSH runtime moves from 0.2.1-rc.3 to 0.2.2-alpha.2, together with group, scope, timeout and the required launch dependencies.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 2.0.4, IM Connect 1.0.20, Automation 1.0.13, Skills Manager 1.2.22, Archive Manager 1.1.18, Agency Agents 1.2.18, Codex Pet 1.0.7, BTW 1.3.0, Simplify 1.0.5, Code Review 1.0.5, PUA 1.0.5, Better Sidebar 0.28.2, dshmarket 1.73.3, and Context 0.78.0. The packaged build stages these exact versions.",
+      "Packaging smoke check resilience: Provides a dedicated readiness timeout once the background server is healthy, preventing smoke timeouts on slower virtualization environments during first-start dependency seeding.",
+      "New installs continue to bundle Context. Usage Billing and the MCP connector are still not bundled; a copy you already installed is kept. Official scheduling stays off unless you turn it on, and saved tasks are kept. The desktop pet follows the cursor while idle. Upgrades from older versions can install the bundled plugins offline and keep your existing plugin configuration. A Windows install no longer lacks bundled plugin dependencies the first time it starts. A Windows zip build opens the matching zip; quit and replace the current folder, and do not run the installer.",
+    ],
+  },
+  {
+    version: "v1.0.89",
+    date: "2026-10-25",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.89",
+    zh: [
+      "内置 DSH 运行时由 0.2.1-rc.2 升级到 0.2.1-rc.3，并同步 group、scope、timeout 与启动依赖。",
+      "内置插件升级到当前最新版：Codex UI 1.1.49、IM Connect 1.0.17、Automation 1.0.10、Skills Manager 1.2.18、Archive Manager 1.1.12、Agency Agents 1.2.13、Codex Pet 1.0.6、BTW 1.0.8、Simplify 1.0.4、Code Review 1.0.3 与 PUA 1.0.3。Better Sidebar 0.28.0、dshmarket 1.66.44 与 Context 0.73.3 本次保持一致。",
+    ],
+    en: [
+      "The bundled DSH runtime moves from 0.2.1-rc.2 to 0.2.1-rc.3, together with group, scope, timeout and the required launch dependencies.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 1.1.49, IM Connect 1.0.17, Automation 1.0.10, Skills Manager 1.2.18, Archive Manager 1.1.12, Agency Agents 1.2.13, Codex Pet 1.0.6, BTW 1.0.8, Simplify 1.0.4, Code Review 1.0.3, and PUA 1.0.3. Better Sidebar 0.28.0, dshmarket 1.66.44, and Context 0.73.3 remain unchanged.",
+    ],
+  },
+  {
+    version: "v1.0.88",
+    date: "2026-10-21",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.88",
+    zh: [
+      "插件热重载保护：在插件市场或插件设置中安装、更新、卸载插件时，桌面端会等待安装进程、锁文件以及后续 bundle 校准完全结束并保持静默后再热重载，避免在耗时较长的安装中途提前重启导致插件缺失或进入恢复页。",
+      "启动期依赖保护：启动与热重载时保留用户在 Web profile 中安装的独立官方插件 bundle 和依赖声明，不再在启动期误删相关依赖。",
+      "内置插件升级到当前最新版：Codex UI 1.1.45、IM Connect 1.0.10、Automation 1.0.5、Skills Manager 1.2.8、Archive Manager 1.1.6、Agency Agents 1.2.8、Codex Pet 1.0.2、dshmarket 1.66.44、Context 0.73.3。BTW 1.0.0、Simplify 1.0.1、Code Review 1.0.1、PUA 1.0.1、Better Sidebar 0.28.0 与官方 DSH 0.2.1-rc.2 已是最新版，本次保持一致。安装包会按这些精确版本装配离线插件。",
+      "新安装继续随包 Context。费用插件和 MCP 连接器仍不附带，已经安装的会保留。官方定时任务默认关闭，需要时再打开，已保存的任务会保留。桌面宠物空闲时会跟着光标转头。从更早版本升级时，离线也能装上配套插件，并保留原有插件配置。Windows 安装包首次启动不再缺少配套插件依赖。Windows 压缩包发现新版本时会打开对应的 zip，请退出后替换当前文件夹，不要运行安装包。",
+    ],
+    en: [
+      "Plugin reload protection: When installing, updating, or removing plugins via the marketplace or settings, the desktop shell now waits for in-flight operations, writer locks, and post-install bundle calibrations to completely settle before reloading DSH, preventing premature restarts during longer installations from causing missing plugins or landing on the recovery page.",
+      "Startup dependency protection: Preserves user-installed official plugin bundles and dependency declarations in the Web profile across cold starts and reloads, preventing startup routines from inadvertently removing installed packages.",
+      "Bundled plugins are upgraded to their current latest versions: Codex UI 1.1.45, IM Connect 1.0.10, Automation 1.0.5, Skills Manager 1.2.8, Archive Manager 1.1.6, Agency Agents 1.2.8, Codex Pet 1.0.2, dshmarket 1.66.44, and Context 0.73.3. BTW 1.0.0, Simplify 1.0.1, Code Review 1.0.1, PUA 1.0.1, Better Sidebar 0.28.0, and official DSH 0.2.1-rc.2 were already the latest versions and remain unchanged. The packaged build stages these exact versions.",
+      "New installs continue to bundle Context. Usage Billing and the MCP connector are still not bundled; a copy you already installed is kept. Official scheduling stays off unless you turn it on, and saved tasks are kept. The desktop pet follows the cursor while idle. Upgrades from older versions can install the bundled plugins offline and keep your existing plugin configuration. A Windows install no longer lacks bundled plugin dependencies the first time it starts. A Windows zip build opens the matching zip; quit and replace the current folder, and do not run the installer.",
+    ],
+  },
+  {
     version: "v1.0.87",
     date: "2026-10-18",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.87",

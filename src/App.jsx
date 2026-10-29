@@ -4,7 +4,7 @@ import { recentDesktopReleases } from "./releases.js";
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
 const releaseUrl = `${desktopRepositoryUrl}/releases/latest`;
-const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.87`;
+const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.92`;
 
 
 const translations = {
@@ -183,8 +183,8 @@ export function App() {
       <a className="official-support" href={currentReleaseUrl} target="_blank" rel="noreferrer" data-no-translate>
         <span className="page-width">
           <strong><i aria-hidden="true" />{locale === "zh" ? "已支持最新 DSH 官方版本" : "SUPPORTS THE LATEST OFFICIAL DSH RELEASE"}</strong>
-          <span>DeepSeek Harness 0.2.1-rc.2</span>
-          <b>{locale === "zh" ? "查看 v1.0.87" : "View v1.0.87"}<Arrow /></b>
+          <span>DeepSeek Harness 0.2.2-alpha.2</span>
+          <b>{locale === "zh" ? "查看 v1.0.92" : "View v1.0.92"}<Arrow /></b>
         </span>
       </a>
       <section className="hero page-width" aria-labelledby="hero-title">

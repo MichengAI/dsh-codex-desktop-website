@@ -7,23 +7,23 @@ const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf
 const faviconSource = readFileSync(new URL("../public/favicon.svg", import.meta.url), "utf8");
 const releasesSource = readFileSync(new URL("../src/releases.js", import.meta.url), "utf8");
 
-test("highlights official DSH 0.2.1-rc.2 support before the hero", () => {
+test("highlights official DSH 0.2.2-alpha.2 support before the hero", () => {
   const supportBanner = appSource.indexOf('className="official-support"');
   const hero = appSource.indexOf('<section className="hero page-width"');
 
   assert.ok(supportBanner >= 0);
   assert.ok(supportBanner < hero);
   assert.match(appSource, /已支持最新 DSH 官方版本/);
-  assert.match(appSource, /DeepSeek Harness 0\.2\.1-rc\.2/);
-  assert.match(appSource, /releases\/tag\/v1\.0\.87/);
-  assert.match(appSource, /查看 v1\.0\.87/);
-  assert.match(indexSource, /已支持 DSH 官方版本 0\.2\.1-rc\.2/);
+  assert.match(appSource, /DeepSeek Harness 0\.2\.2-alpha\.2/);
+  assert.match(appSource, /releases\/tag\/v1\.0\.92/);
+  assert.match(appSource, /查看 v1\.0\.92/);
+  assert.match(indexSource, /已支持 DSH 官方版本 0\.2\.2-alpha\.2/);
 });
 
-test("lists desktop v1.0.87 as the latest release", () => {
-  assert.match(releasesSource, /version: "v1\.0\.87"/);
-  assert.match(releasesSource, /releases\/tag\/v1\.0\.87/);
-  assert.ok(releasesSource.indexOf('version: "v1.0.87"') < releasesSource.indexOf('version: "v1.0.86"'));
+test("lists desktop v1.0.92 as the latest release", () => {
+  assert.match(releasesSource, /version: "v1\.0\.92"/);
+  assert.match(releasesSource, /releases\/tag\/v1\.0\.92/);
+  assert.ok(releasesSource.indexOf('version: "v1.0.92"') < releasesSource.indexOf('version: "v1.0.89"'));
 });
 
 test("shows sixteen ecosystem component cards before the five-release changelog", () => {
