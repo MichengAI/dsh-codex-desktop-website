@@ -112,8 +112,6 @@ const firstPartyPlugins = [
 const communityPlugins = [
   ["dsh-context", "dsh-context", "上下文管理", "查看上下文构成、使用情况与演进，帮助判断何时需要整理或压缩。", "https://github.com/bowenliang123/dsh-context"],
   ["dsh-better-sidebar", "dsh-better-sidebar", "增强侧边栏", "提供类似 VS Code 的文件、编辑器、终端、Git 与浏览器侧边栏。", "https://github.com/omdsh-dev/DSH-better-sidebar"],
-  ["dsh-mcp-connector", "dsh-mcp-connector", "MCP 连接", "通过 OAuth、API Key、HTTP、stdio 或 JSON 配置添加并管理 MCP 服务。", "https://github.com/duhu2000/dsh-mcp-connector"],
-  ["dsh-ui-usage-billing", "@kenz1117/dsh-ui-usage-billing", "用量统计", "汇总模型用量与费用，提供面向工作台的计费看板。", "https://github.com/kenz1117/dsh-ui-usage-billing"],
 ];
 const pluginLabelTranslations = {
   "桌面宠物": "DESKTOP PET",

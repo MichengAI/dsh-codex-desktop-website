@@ -26,7 +26,7 @@ test("lists desktop v1.0.93 as the latest release", () => {
   assert.ok(releasesSource.indexOf('version: "v1.0.93"') < releasesSource.indexOf('version: "v1.0.92"'));
 });
 
-test("shows sixteen ecosystem component cards before the five-release changelog", () => {
+test("shows fourteen ecosystem component cards before the five-release changelog", () => {
   const firstPartyPluginData = appSource.match(/const firstPartyPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const communityPluginData = appSource.match(/const communityPlugins = \[([\s\S]*?)\n\];/)?.[1] ?? "";
   const firstPartyPluginCount = (firstPartyPluginData.match(/^  \["/gm) ?? []).length;
@@ -35,7 +35,7 @@ test("shows sixteen ecosystem component cards before the five-release changelog"
   const changelogSection = appSource.indexOf('<section className="changelog page-width"');
 
   assert.equal(firstPartyPluginCount, 11);
-  assert.equal(communityPluginCount, 4);
+  assert.equal(communityPluginCount, 2);
   assert.ok(pluginsSection >= 0);
   assert.ok(changelogSection > pluginsSection);
   assert.match(appSource, /最近 5 个版本/);
@@ -77,12 +77,11 @@ test("separates self-made and community plugins by their maintainers", () => {
   const communityProjectNames = [
     "dsh-context",
     "dsh-better-sidebar",
-    "dsh-mcp-connector",
-    "dsh-ui-usage-billing",
   ];
 
   for (const projectName of firstPartyProjectNames) assert.match(firstPartyPluginData, new RegExp(`\\["${projectName}",`));
   for (const projectName of communityProjectNames) assert.match(communityPluginData, new RegExp(`\\["${projectName}",`));
+  assert.doesNotMatch(communityPluginData, /dsh-mcp-connector|dsh-ui-usage-billing/);
   assert.doesNotMatch(appSource, /Git Graph|git-graph|Git 图谱|Git 提交图谱/);
   assert.match(appSource, /preview-usage-billing\.webp/);
   assert.ok(existsSync(new URL("../public/assets/screenshots/preview-usage-billing.webp", import.meta.url)));
