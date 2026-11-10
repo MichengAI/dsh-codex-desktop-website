@@ -1,6 +1,8 @@
 # DSH Codex Desktop Website
 
-[中文](README.zh-CN.md) · [Changelog](CHANGELOG.md)
+[简体中文](README.zh-CN.md) · [English](README.en.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [Português](README.pt.md)
+
+[Changelog](CHANGELOG.md)
 
 This repository contains the website source for [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop). The site introduces the project and links to installers for Windows, macOS, and Linux.
 

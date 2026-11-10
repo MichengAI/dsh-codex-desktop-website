@@ -1,6 +1,8 @@
 # DSH Codex Desktop 官网
 
-[English](README.md) · [更新日志](CHANGELOG.zh-CN.md)
+[简体中文](README.zh-CN.md) · [English](README.en.md) · [日本語](README.ja.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [Português](README.pt.md)
+
+[更新日志](CHANGELOG.zh-CN.md)
 
 这是 [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop) 的官网源码。网站展示项目说明，并提供 Windows、macOS 和 Linux 的安装包下载。
 
