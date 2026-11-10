@@ -8,7 +8,7 @@ Dieses Repository enthält den Quellcode der Vorstellungs- und Download-Website 
 
 Laden Sie die neueste Version über die [Releases-Seite der Desktop-App](https://github.com/MichengAI/dsh-codex-desktop/releases) herunter.
 
-Die aktuelle Desktop-Version ist **v1.0.92**, die **DSH 0.2.2-alpha.2** und **14 Komponenten (einschließlich des Plugin-Marktes)** bündelt. Neuinstallationen enthalten Context. Das Abrechnungs-Plugin und der MCP-Connector sind nicht beigelegt; bereits installierte Exemplare bleiben erhalten. Sichern Sie wichtige Sitzungen vor dem Upgrade.
+Die aktuelle Desktop-Version ist **v1.0.93**, die **DSH 0.2.2-rc.1** und **14 Komponenten (einschließlich des Plugin-Marktes)** bündelt. Neuinstallationen enthalten Context. Das Abrechnungs-Plugin und der MCP-Connector sind nicht beigelegt; bereits installierte Exemplare bleiben erhalten. Sichern Sie wichtige Sitzungen vor dem Upgrade.
 
 ## Desktop-App herunterladen
 

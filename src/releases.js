@@ -1,5 +1,20 @@
 const desktopReleaseHistory = [
   {
+    version: "v1.0.93",
+    date: "2026-11-05",
+    url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.93",
+    zh: [
+      "内置 DSH 运行时升级到 0.2.2-rc.1，并同步升级 group（1.1.0）、scope（0.2.2-rc.1）与 timeout（0.2.2-rc.1）启动依赖。",
+      "全量内置插件升级到最新版本：Codex UI 2.0.19、IM Connect 1.0.27、Automation 1.0.18、Skills Manager 1.2.33、Archive Manager 1.2.8、Agency Agents 1.2.26、Codex Pet 1.0.13、BTW 1.3.3、Simplify 1.0.7、Code Review 1.0.8、PUA 1.0.8、Better Sidebar 0.30.1、dshmarket 1.73.11 与 Context 0.82.0。安装包按这些精确版本装配离线插件。",
+      "新安装继续随包 Context。从更早版本升级时，离线也能装上配套插件，并保留原有插件配置。",
+    ],
+    en: [
+      "The bundled DSH runtime moves to 0.2.2-rc.1, together with group (1.1.0), scope (0.2.2-rc.1), timeout (0.2.2-rc.1) and the required launch dependencies.",
+      "Bundled plugins are upgraded to their latest versions: Codex UI 2.0.19, IM Connect 1.0.27, Automation 1.0.18, Skills Manager 1.2.33, Archive Manager 1.2.8, Agency Agents 1.2.26, Codex Pet 1.0.13, BTW 1.3.3, Simplify 1.0.7, Code Review 1.0.8, PUA 1.0.8, Better Sidebar 0.30.1, dshmarket 1.73.11, and Context 0.82.0. The packaged build stages these exact versions.",
+      "New installs continue to bundle Context. Upgrades from older versions can install the bundled plugins offline and keep your existing plugin configuration.",
+    ],
+  },
+  {
     version: "v1.0.92",
     date: "2026-10-29",
     url: "https://github.com/MichengAI/dsh-codex-desktop/releases/tag/v1.0.92",

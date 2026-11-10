@@ -19,7 +19,7 @@ import {
 const desktopRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop";
 const websiteRepositoryUrl = "https://github.com/MichengAI/dsh-codex-desktop-website";
 const releaseUrl = `${desktopRepositoryUrl}/releases/latest`;
-const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.92`;
+const currentReleaseUrl = `${desktopRepositoryUrl}/releases/tag/v1.0.93`;
 
 function getInitialTheme() {
   const savedTheme = window.localStorage.getItem("dsh-theme");
@@ -199,9 +199,9 @@ export function App() {
     <main id="top">
       <a className="official-support" href={currentReleaseUrl} target="_blank" rel="noreferrer" data-no-translate>
         <span className="page-width">
-          <strong><i aria-hidden="true" />{locale === "zh" ? "已支持最新 DSH 官方版本" : "SUPPORTS THE LATEST OFFICIAL DSH RELEASE"}</strong>
-          <span>DeepSeek Harness 0.2.2-alpha.2</span>
-          <b>{locale === "zh" ? "查看 v1.0.92" : "View v1.0.92"}<Arrow /></b>
+          <strong><i aria-hidden="true" />{locale === "zh" ? "已支持最新 DSH 官方版本" : (officialSupportBanner[locale] || "已支持最新 DSH 官方版本")}</strong>
+          <span>DeepSeek Harness 0.2.2-rc.1</span>
+          <b>{locale === "zh" ? "查看 v1.0.93" : (viewVersionText[locale] || "查看 v1.0.93")}<Arrow /></b>
         </span>
       </a>
       <section className="hero page-width" aria-labelledby="hero-title">

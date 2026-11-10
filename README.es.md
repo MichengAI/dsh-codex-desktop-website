@@ -8,7 +8,7 @@ Este repositorio contiene el código fuente del sitio web de presentación y des
 
 Descargue la versión más reciente desde la [página de lanzamientos de la app de escritorio](https://github.com/MichengAI/dsh-codex-desktop/releases).
 
-La versión actual de escritorio es **v1.0.92**, que incluye **DSH 0.2.2-alpha.2** y **14 componentes (incluido el mercado de complementos)**. Las nuevas instalaciones incluyen Context. El complemento de facturación y el conector MCP no están incluidos; las copias ya instaladas se conservarán. Realice una copia de seguridad de las conversaciones importantes antes de actualizar.
+La versión actual de escritorio es **v1.0.93**, que incluye **DSH 0.2.2-rc.1** y **14 componentes (incluido el mercado de complementos)**. Las nuevas instalaciones incluyen Context. El complemento de facturación y el conector MCP no están incluidos; las copias ya instaladas se conservarán. Realice una copia de seguridad de las conversaciones importantes antes de actualizar.
 
 ## Obtener la aplicación de escritorio
 

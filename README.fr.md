@@ -8,7 +8,7 @@ Ce dépôt contient le code source du site web de présentation et de téléchar
 
 Téléchargez la dernière version depuis la [page des versions de l'application de bureau](https://github.com/MichengAI/dsh-codex-desktop/releases).
 
-La version actuelle pour ordinateur est la **v1.0.92**, intégrant **DSH 0.2.2-alpha.2** et **14 composants (y compris le marché de plugins)**. Les nouvelles installations incluent Context. Le plugin de facturation et le connecteur MCP ne sont pas inclus ; les copies déjà installées sont conservées. Sauvegardez vos conversations importantes avant toute mise à niveau.
+La version actuelle pour ordinateur est la **v1.0.93**, intégrant **DSH 0.2.2-rc.1** et **14 composants (y compris le marché de plugins)**. Les nouvelles installations incluent Context. Le plugin de facturation et le connecteur MCP ne sont pas inclus ; les copies déjà installées sont conservées. Sauvegardez vos conversations importantes avant toute mise à niveau.
 
 ## Obtenir l'application de bureau
 

@@ -45,14 +45,14 @@ export const officialSupportBanner = {
 };
 
 export const viewVersionText = {
-  zh: "查看 v1.0.92",
-  en: "View v1.0.92",
-  ja: "v1.0.92 を見る",
-  es: "Ver v1.0.92",
-  fr: "Voir v1.0.92",
-  de: "v1.0.92 ansehen",
-  ru: "Посмотреть v1.0.92",
-  pt: "Ver v1.0.92",
+  zh: "查看 v1.0.93",
+  en: "View v1.0.93",
+  ja: "v1.0.93 を見る",
+  es: "Ver v1.0.93",
+  fr: "Voir v1.0.93",
+  de: "v1.0.93 ansehen",
+  ru: "Посмотреть v1.0.93",
+  pt: "Ver v1.0.93",
 };
 
 export const releaseBadge = {
